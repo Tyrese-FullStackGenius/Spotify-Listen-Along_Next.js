@@ -8,9 +8,9 @@ import { connect } from "react-redux";
 import {
   fetchAvailableDevices,
   transferPlaybackToDevice,
-} from "../../../listen-along-backend/actions/devicesActions.js";
-import { getDevices } from "../../../listen-along-backend/reducers/devicesReducer.js";
-import { getIsFetchingDevices } from "../../../listen-along-backend/reducers/index.js";
+} from "../features/devices/devicesActions.js";
+import { getDevices } from "../features/devices/devicesReducer.js";
+import { getIsFetchingDevices } from "../ROOT-REDUCER/index.js";
 
 // ================= //
 //      DEVICES      //
