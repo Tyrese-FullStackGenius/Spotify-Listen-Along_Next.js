@@ -4,11 +4,11 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { login } from "../../../listen-along-backend/actions/sessionActions.js";
+import { login } from "../features/session/sessionActions.js";
 import {
   mutePlayback,
   unmutePlayback,
-} from "../../../listen-along-backend/actions/playbackActions.js";
+} from "../features/playback/playbackActions.js";
 
 const getNameFromUser = (user) => {
   return user.display_name || user.id;
