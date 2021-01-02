@@ -13,7 +13,7 @@ const SPOTIFY_API_BASE = "https://api.spotify.com/v1";
 //      PLAYBACK      //
 // ================== //
 
-// * to-do: separate out my controllers from my middleware
+// *** to-do: separate out my controllers from my middleware
 
 export default (store) => (next) => (action) => {
   const result = next(action);

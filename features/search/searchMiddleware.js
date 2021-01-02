@@ -12,7 +12,7 @@ const SPOTIFY_API_BASE = "https://api.spotify.com/v1";
 //       SEARCH       //
 // ================== //
 
-// * to-do: separate out my controllers from my middleware
+// *** to-do: separate out my controllers from my middleware
 
 const searchTracks = (query) => (dispatch, getState) => {
   // *** FOUND THE BELOW RE:  *wildcards*  ON STACK OVERFLOW AS A "trick to improve search results"

@@ -23,6 +23,8 @@ const SPOTIFY_API_BASE = "https://api.spotify.com/v1";
 //       DEVICES      //
 // ================== //
 
+// *** to-do: separate out my controllers from my middleware
+
 export default (store) => (next) => (action) => {
   const result = next(action);
   switch (action.type) {
