@@ -8,11 +8,12 @@
 
 class Robot {
   constructor(options) {
-    this.image = options.image || "/images/robot-icon.png";
+    this.image = options.image || "/static/recommender-robot-icon.png";
     this.id = options.id || "Robot";
     this.recommendations = {};
   }
 
+  // Generate Recommendations
   async generateRecommendations(items, getToken, spotifyApi) {
     const trackIds = items
       .filter((item) => item.user.type === "user")
