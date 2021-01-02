@@ -6,7 +6,7 @@ import {
   LOGIN_SUCCESS,
   UPDATE_TOKEN_SUCCESS,
   UPDATE_CURRENT_USER,
-} from "../constants/ActionTypes.js";
+} from "../../constants/actionTypes.js";
 
 // ================== //
 //    SESSION SLICE   //
