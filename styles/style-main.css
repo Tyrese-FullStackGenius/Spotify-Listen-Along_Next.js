@@ -1,0 +1,255 @@
+/* 
+// ============================ //
+//           MY LAYOUT          //
+// ============================ //
+*/
+
+.layout-base {
+  color: #333333;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+}
+
+/* // ======================================================== // */
+
+/*
+*** to-do: 
+circle-back and clean up organization of CSS... 
+Temp., basic styling for now until I get the 
+rest of the MVP finalized 
+*/
+
+/* 
+// ============================ //
+//           COMPONENTS         // ===========================
+// ============================ //
+*/
+
+/* 
+// ================= //
+//       MAIN       //
+// ================= //
+*/
+
+.app {
+  margin: 20px;
+  padding: 20px;
+}
+
+.queue-container {
+  float: left;
+}
+
+.users-container {
+  float: right;
+  width: 150px;
+}
+
+/* 
+// ================= //
+//   ADD TO QUEUE    //
+// ================= //
+*/
+
+.add-to-queue__search-results {
+  border: 1px solid #999999;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.add-to-queue__search-results-item {
+  padding: 5px 0 5px 5px;
+}
+
+.add-to-queue__search-results-item--focused {
+  background-color: #eeeeee;
+}
+
+.container {
+  display: flex;
+}
+
+.album-img {
+  width: 64;
+  padding-right: 1em;
+}
+
+.flex-item {
+  flex-grow: 1;
+}
+
+.song-name {
+  font-size: 1.3em;
+  margin-bottom: 0.3em;
+}
+
+.add-to-queue__input {
+  padding: 5px;
+  width: 400px;
+}
+
+/* 
+// ================= //
+//      BUTTONS      //
+// ================= //
+*/
+
+.btn--base {
+  background-color: transparent;
+  border: 1px solid #666666;
+  border-radius: 50px;
+  color: #666666;
+  cursor: pointer;
+  line-height: 28px;
+  padding: 0 15px;
+}
+
+.btn--dark {
+  background-color: #bbc8d5;
+  border: 1px solid #bbc8d5;
+  color: #333333;
+}
+
+/* 
+// ================= //
+//      DEVICES      //
+// ================= //
+*/
+
+/* 
+// ================= //
+//      HEADER       //
+// ================= //
+*/
+
+.link-base {
+  line-height: 30px;
+  margin-right: 15;
+}
+
+.main-link {
+  float: left;
+  margin-right: 10px;
+}
+
+.header-container {
+  background-color: #e3ebf4;
+  padding: 20px 40px;
+}
+
+.user-header {
+  float: right;
+  width: 150px;
+}
+
+.playback-control {
+  float: right;
+  width: 200px;
+}
+
+/* 
+// ================= //
+//    NOW PLAYING    //
+// ================= //
+*/
+
+.now-playing {
+  background-color: #424d58;
+  color: #ffffff;
+  height: 250px;
+  position: relative;
+  width: 100%;
+}
+
+.now-playing__text {
+  padding: 40px;
+}
+
+.now-playing__bd {
+  padding-left: 30px;
+}
+
+.now-playing__track-name {
+  font-size: 2em;
+  padding-top: 1.2em;
+}
+
+.now-playing__artist-name {
+  font-size: 1.2em;
+  padding-bottom: 2em;
+  padding-top: 0.5em;
+}
+
+.now-playing__user {
+  padding-top: 0.5em;
+}
+
+.now-playing__progress-bar {
+  bottom: 0;
+  background-color: #222222;
+  height: 5px;
+  position: absolute;
+  width: 100%;
+}
+
+/* 
+// ================= //
+//       QUEUE       //
+// ================= //
+*/
+
+.queue {
+  max-width: 550px;
+}
+
+/* 
+// ================= //
+//       USERS       //
+// ================= //
+*/
+
+.user-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.user-list__item {
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+.user-list__header {
+  color: #999999;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+/* // ========================================================  // */
+
+/* 
+// ================= //
+//       FLEX        //
+// ================= //
+*/
+
+.user-image {
+  border-radius: 50%;
+}
+
+.user-name {
+  line-height: 30px;
+}
+
+.media,
+.media__bd {
+  overflow: hidden;
+  _overflow: visible;
+  zoom: 1;
+}
+
+.media .media__img {
+  float: left;
+  margin-right: 10px;
+}
