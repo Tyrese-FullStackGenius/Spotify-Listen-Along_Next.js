@@ -16,15 +16,15 @@ const compression = require("compression");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 
-const auth = require("./authorization.js");
+const authorization = require("./authorization.js");
 const api = require("./api.js");
 
 nextApp.prepare().then(() => {
   app.use(compression());
   app.use(cookieParser());
-  // *** to-do: shift from ejs to jsx
 
   app.set("views", __dirname + "/views");
+  // Embedded JavaScript for use with our Spotify Callback render
   app.set("view engine", "ejs");
 
   // need this to parse our refresh_token
@@ -35,7 +35,7 @@ nextApp.prepare().then(() => {
   );
 
   // Auth Router
-  app.use("/auth", auth);
+  app.use("/auth", authorization);
 
   // API + Web Socket Router
   app.use("/api", api(io));

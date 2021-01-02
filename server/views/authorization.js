@@ -168,4 +168,4 @@ auth.post("/token", function (req, res) {
   }
 });
 
-module.exports = auth;
+module.exports = authorization;
