@@ -61,14 +61,14 @@ class QueueManager {
     }
   }
 
-  initialize() {
+  init() {
     this.play();
   }
 
   play() {
-    console.log(`api.js > play`);
+    console.log(`api.js says... > play`);
     if (this.queue.length > 0) {
-      console.log(`api.js > play has a queue`);
+      console.log(`api.js says... > play has a queue`);
       const queueItem = this.queue.shift();
       this.handleQueueChanged();
       this.playingContext = {
