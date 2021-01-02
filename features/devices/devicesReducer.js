@@ -6,7 +6,7 @@ import {
   FETCH_AVAILABLE_DEVICES,
   FETCH_AVAILABLE_DEVICES_ERROR,
   FETCH_AVAILABLE_DEVICES_SUCCESS,
-} from "../constants/ActionTypes.js";
+} from "../../constants/actionTypes.js";
 
 // ================== //
 //    DEVICES SLICE   //
