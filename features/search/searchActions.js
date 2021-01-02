@@ -25,5 +25,5 @@ export const fetchTrack = (id) => ({ type: types.FETCH_TRACK, id });
 export const fetchTrackSuccess = (id, track) => ({
   type: types.FETCH_TRACK_SUCCESS,
   id,
-  track,
+  // track
 });

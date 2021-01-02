@@ -5,7 +5,7 @@ import {
   SEARCH_TRACKS,
   SEARCH_TRACKS_SUCCESS,
   SEARCH_TRACKS_RESET,
-} from "../constants/ActionTypes.js";
+} from "../../constants/actionTypes.js";
 
 // ================== //
 //    SEARCH SLICE    //
@@ -28,6 +28,7 @@ export default (state, action) => {
       }
     case SEARCH_TRACKS_RESET:
       return initialState;
+
     default:
       return state ? state : initialState;
   }

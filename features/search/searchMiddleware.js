@@ -3,8 +3,8 @@
 
 import fetch from "isomorphic-unfetch";
 
-import { SEARCH_TRACKS } from "../constants/ActionTypes.js";
-import { searchTracksSuccess } from "../actions/searchActions.js";
+import { SEARCH_TRACKS } from "../../constants/actionTypes.js";
+import { searchTracksSuccess } from "../search/searchActions.js";
 
 const SPOTIFY_API_BASE = "https://api.spotify.com/v1";
 
