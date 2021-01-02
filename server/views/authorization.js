@@ -8,8 +8,8 @@ const querystring = require("querystring");
 const request = require("request");
 
 const Router = express.Router;
-const AppConfig = require("../config/app.js");
-const AuthConfig = require("../config/authorization.js");
+const AppConfig = require("../../config/app.js");
+const AuthConfig = require("../../config/authorization.js");
 
 const redirect_uri = `${AppConfig.HOST}/auth/callback`;
 const client_id = AuthConfig.CLIENT_ID;
