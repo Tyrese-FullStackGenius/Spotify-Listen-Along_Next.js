@@ -4,6 +4,8 @@
 import React from "react";
 import { connect } from "react-redux";
 
+import Link from "next/link";
+
 import { login } from "../features/session/sessionActions.js";
 import {
   mutePlayback,
@@ -21,9 +23,11 @@ const getNameFromUser = (user) => {
 const Header = ({ session, muted, mutePlayback, unmutePlayback, login }) => (
   <div className="header-container">
     {/* *** to-do: ADD YOUR LINKS, BRO! Do you actually wanna do an about page? *** */}
-    <a className="link-base main-link">
-      <img src="" />
-    </a>
+    <Link href="/">
+      <a className="link-base main-link">
+        <img src="" />
+      </a>
+    </Link>
     {/* <a className="link-base">ABOUT</a> */}
     {session.user ? (
       <div className="media user-header">
