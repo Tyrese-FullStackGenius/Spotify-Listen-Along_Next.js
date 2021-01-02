@@ -1,6 +1,6 @@
 // REF: https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow
 // * note: Actions in Redux are plain objects with a TYPE field | Actions are the events that occur in the app based on user input + trigger updates in the state
-import * as types from "../constants/ActionTypes.js";
+import * as types from "../../constants/actionTypes.js";
 
 // =============== //
 //     VOTING      //

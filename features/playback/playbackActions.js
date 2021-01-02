@@ -4,7 +4,7 @@
 import fetch from "isomorphic-unfetch";
 
 import Config from "../config/app.js";
-import * as types from "../constants/ActionTypes.js";
+import * as types from "../../constants/actionTypes.js";
 
 // =============== //
 //     PLAYBACK    //
