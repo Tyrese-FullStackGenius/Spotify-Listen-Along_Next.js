@@ -61,7 +61,7 @@ class QueueManager {
     }
   }
 
-  init() {
+  initialize() {
     this.play();
   }
 

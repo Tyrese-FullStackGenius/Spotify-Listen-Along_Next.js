@@ -5,14 +5,13 @@
 // REF: https://developer.spotify.com/documentation/general/guides/authorization-guide/
 
 const express = require("express");
-const fs = require("fs");
 const SpotifyWebAPI = require("spotify-web-api-node");
 
-const AuthConfig = require("../config/authorization.js");
+const AuthConfig = require("../../config/authorization.js");
 
-const Robot = require("./models/Robot.js");
-const QueueItem = require("./models/QueueItem.js");
-const QueueManager = require("./models/QueueManager.js");
+const RecRobot = require("../models/Robot.js");
+const QueueItem = require("../models/QueueItem.js");
+const QueueManager = require("../models/QueueManager.js");
 
 const spotifyApi = new SpotifyWebAPI({
   clientId: AuthConfig.CLIENT_ID,
@@ -40,7 +39,6 @@ const fetchNewToken = (callback) => {
       setTimeout(() => {
         fetchNewToken();
       }, (expires_in - 10 * 60) * 1000);
-      // set to refresh in expires_in - 10 minutes
     })
     .catch((err) => {
       console.error(
@@ -60,12 +58,13 @@ const getToken = (callback) => {
 };
 
 // Initialize our Recommender Robot
-const robotUser = new Robot({
+const robotUser = new RecRobot({
   getToken: getToken,
   spotifyApi: spotifyApi,
 });
 
-// Add our Recommender Robot to our users array. He'll always be in the room. Always. :)
+// Add our Recommender Robot to our users array.
+// He'll always be in the room. Always. :)
 let users = [robotUser.toJSON()];
 
 let globalSocket = null;
@@ -128,26 +127,32 @@ queueManager.read();
 queueManager.initialize();
 
 const exportedApi = (io) => {
+  // Still a little confused by this, but following TOB's recs...
   let api = Router();
 
   globalIo = io;
 
+  // Home
   api.get("/", (req, res) => {
     res.json({ version });
   });
 
+  // Now Playing
   api.get("/now-playing", (req, res) => {
     res.json(queueManager.playingContext);
   });
 
+  // Queue
   api.get("/queue", (req, res) => {
     res.json(queueManager.queue);
   });
 
+  // Users
   api.get("/users", (req, res) => {
     res.json(users);
   });
 
+  // Auth
   api.get("/me", async (req, res) => {
     await getToken();
     try {
@@ -217,6 +222,7 @@ const exportedApi = (io) => {
       } else {
         // otherwise... the user must not have logged-in yet
         users.push(Object.assign({}, user, { socketIdArray: [socket.id] }));
+
         // Send our "update users" event
         socket.emit("update users", users);
         socket.broadcast.emit("update users", users);
@@ -229,7 +235,7 @@ const exportedApi = (io) => {
             "play track",
             playingContext.track,
             playingContext.user,
-            Data.now() - playingContext.startTimestamp
+            Date.now() - playingContext.startTimestamp
           );
         }
       }
