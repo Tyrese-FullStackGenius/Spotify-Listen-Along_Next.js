@@ -7,7 +7,7 @@ import fetch from "isomorphic-unfetch";
 import {
   FETCH_AVAILABLE_DEVICES,
   TRANSFER_PLAYBACK_TO_DEVICE,
-} from "../constants/ActionTypes.js";
+} from "../../constants/actionTypes.js";
 
 import {
   fetchAvailableDevices,
@@ -15,7 +15,7 @@ import {
   fetchAvailableDevicesError,
   transferPlaybackToDeviceSuccess,
   transferPlaybackToDeviceError,
-} from "../actions/devicesActions.js";
+} from "../devices/devicesActions.js";
 
 const SPOTIFY_API_BASE = "https://api.spotify.com/v1";
 
