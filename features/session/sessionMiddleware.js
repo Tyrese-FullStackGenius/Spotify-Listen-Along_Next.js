@@ -5,12 +5,12 @@
 
 import fetch from "isomorphic-unfetch";
 
-import { LOAD, LOGIN } from "../constants/ActionTypes.js";
+import { LOAD, LOGIN } from "../../constants/actionTypes.js";
 import {
   loginSuccess,
   updateCurrentUser,
   updateTokenSuccess,
-} from "../actions/sessionActions.js";
+} from "../session/sessionActions.js";
 
 import Config from "../../config/app.js";
 
@@ -128,6 +128,8 @@ export default (store) => (next) => (action) => {
         `user-read-playback-state`,
         `user-modify-playback-state`,
       ]);
+
+      // REF: https://stackoverflow.com/questions/45580904/implement-log-in-with-spotify-popup
       window.open(
         url,
         "Spotify",
