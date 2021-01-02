@@ -5,7 +5,7 @@
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 
-import { reducers } from "../reducers";
+import { reducers } from "../ROOT-REDUCER/index.js";
 
 import devicesMiddleware from "../middleware/devicesMiddleware.js";
 import loggerMiddleware from "../middleware/loggerMiddleware.js";
@@ -23,6 +23,7 @@ import { load } from "../actions/sessionActions.js";
 
 export const initStore = (initialState = {}) => {
   const store = createStore(
+    // Below is our exported combineReducers() from our Root Reducer
     reducers(),
     initialState,
     applyMiddleware(
