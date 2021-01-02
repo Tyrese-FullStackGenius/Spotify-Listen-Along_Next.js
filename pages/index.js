@@ -4,16 +4,16 @@
 import Link from "next/link";
 import React from "react";
 import withRedux from "next-redux-wrapper";
-import Layout from "../components/MyLayout.js";
-import { initStore } from "../store/store";
-import { fetchQueue } from "../actions/queueActions";
-import { fetchUsers } from "../actions/usersActions";
-import { fetchPlayingContext } from "../actions/playbackActions";
-import Users from "../components/Users";
-import Queue from "../components/Queue";
-import AddToQueue from "../components/AddToQueue";
-import NowPlaying from "../components/NowPlaying";
-import Devices from "../components/Devices";
+import Layout from "../components/Layout.js";
+import { initStore } from "../store/store.js";
+import { fetchQueue } from "../features/queue/queueActions.js";
+import { fetchUsers } from "../features/users/usersActions.js";
+import { fetchPlayingContext } from "../features/playback/playbackActions.js";
+import Users from "../components/Users.js";
+import Queue from "../components/Queue.js";
+import AddToQueue from "../components/AddToQueue.js";
+import NowPlaying from "../components/NowPlaying.js";
+import Devices from "../components/Devices.js";
 
 // ================= //
 //        HOME       //
