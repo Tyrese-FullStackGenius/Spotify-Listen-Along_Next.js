@@ -3,12 +3,12 @@
 
 import { combineReducers } from "redux";
 
-import devicesReducer, * as fromDevices from "./devicesReducer.js";
-import playbackReducer from "./playbackReducer.js";
-import queueReducer from "./queueReducer.js";
-import searchReducer from "./searchReducer.js";
-import sessionReducer from "./sessionReducer.js";
-import usersReducer from "./usersReducer.js";
+import devicesReducer, * as fromDevices from "../features/devices/devicesReducer.js";
+import playbackReducer from "../features/playback/playbackReducer.js";
+import queueReducer from "../features/queue/queueReducer.js";
+import searchReducer from "../features/search/searchReducer.js";
+import sessionReducer from "../features/session/sessionReducer.js";
+import usersReducer from "../features/users/usersReducer.js";
 
 // ================== //
 //    ROOT REDUCER    //
