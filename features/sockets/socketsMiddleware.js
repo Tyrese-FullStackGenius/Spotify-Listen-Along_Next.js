@@ -1,16 +1,17 @@
 // REF: https://socket.io/docs/v3
 // REF: https://socket.io/docs/v3/middlewares/
 // REF: https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow
+// REF: https://developer.spotify.com/documentation/web-api/reference/search/search/
 
 import {
   VOTE_UP,
   LOGIN_SUCCESS,
   QUEUE_REMOVE_TRACK,
   QUEUE_TRACK,
-} from "../constants/ActionTypes.js";
-import { updateUsers } from "../actions/usersActions.js";
-import { updateQueue, queueEnded } from "../actions/queueActions.js";
-import { playTrack, updateNowPlaying } from "../actions/playbackActions.js";
+} from "../../constants/actionTypes.js";
+import { updateUsers } from "../users/usersActions.js";
+import { updateQueue, queueEnded } from "../queue/queueActions.js";
+import { playTrack, updateNowPlaying } from "../playback/playbackActions.js";
 import Config from "../../config/app.js";
 
 import io from "socket.io-client";
@@ -22,7 +23,7 @@ import io from "socket.io-client";
 // ==> • socket.emit() sends our event
 // ==> • socket.on() receives our event by registering a listener
 
-let socket = null;
+var socket = null;
 
 const getIdFromTrackString = (trackString = "") => {
   let matches = trackString.match(/^https:\/\/open\.spotify\.com\/track\/(.*)/);
