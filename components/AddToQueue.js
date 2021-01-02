@@ -7,8 +7,8 @@ import { connect } from "react-redux";
 import {
   searchTracks,
   searchTracksReset,
-} from "../../../listen-along-backend/actions/searchActions.js";
-import { queueTrack } from "../../../listen-along-backend/actions/queueActions.js";
+} from "../features/search/searchActions.js";
+import { queueTrack } from "../features/queue/queueActions.js";
 
 // ================== //
 //   SEARCH RESULTS   //
