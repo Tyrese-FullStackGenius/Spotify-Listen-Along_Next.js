@@ -8,7 +8,7 @@ import {
   MUTE_PLAYBACK,
   UNMUTE_PLAYBACK,
   UPDATE_NOW_PLAYING,
-} from "../constants/ActionTypes.js";
+} from "../../constants/actionTypes.js";
 
 // ================== //
 //   PLAYBACK SLICE   //
