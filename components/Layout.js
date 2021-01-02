@@ -1,5 +1,4 @@
 import Header from "./Header.js";
-import Head from "next/head";
 
 // ================= //
 //      LAYOUT       //
