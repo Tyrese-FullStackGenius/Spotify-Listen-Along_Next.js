@@ -1,0 +1,12 @@
+{
+  "about": "Handla om",
+  "login": "Logga in med Spotify",
+  "online": "Uppkpplad",
+  "queue.title": "Kö",
+  "queue.empty": "Kön är tom, lägg till en låt.",
+  "queue.add": "Lägg till en låt",
+  "devices.title": "Enheter",
+  "devices.fetch": "Hämta enheter",
+  "devices.transfer": "Överföra",
+  "devices.empty": "Listan över enheter är tom,"
+}

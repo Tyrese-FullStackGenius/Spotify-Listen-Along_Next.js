@@ -1,0 +1,12 @@
+{
+  "about": "À propos",
+  "login": "Connectez-vous avec Spotify",
+  "online": "En ligne",
+  "queue.title": "La File",
+  "queue.empty": "La file d'attente est vide, ajoutez une chanson.",
+  "queue.add": "Ajouter une chanson",
+  "devices.title": "Dispositifs",
+  "devices.fetch": "Récupérer des appareils",
+  "devices.transfer": "Transfert",
+  "devices.empty": "La liste des appareils est vide,"
+}

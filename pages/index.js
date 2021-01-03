@@ -18,7 +18,7 @@ import Devices from "../components/Devices.js";
 //        HOME       //
 // ================= //
 
-class Home extends React.Component {
+class Main extends React.Component {
   static getInitialProps({ req, store, isServer }) {
     return Promise.all([
       store.dispatch(fetchQueue()),
@@ -59,4 +59,4 @@ const mapStateToProps = (state) => ({
   session: state.session,
 });
 
-export default withRedux(initStore, mapStateToProps, null)(Home);
+export default withRedux(initStore, mapStateToProps, null)(Main);

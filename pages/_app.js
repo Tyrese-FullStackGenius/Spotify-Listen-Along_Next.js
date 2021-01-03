@@ -2,10 +2,9 @@
 
 import "../public/styles/style-main.css";
 import { Provider } from "react-redux";
-import { createWrapper } from "next-redux-wrapper";
 import { initStore } from "../store/store.js";
 
-import App from "next/app";
+// import App from "next/app";
 
 const store = initStore();
 
