@@ -4,27 +4,27 @@
 import fetch from "isomorphic-unfetch";
 
 import Config from "../../config/app.js";
-import * as types from "../../constants/actionTypes.js";
+import * as actionTypes from "../../constants/actionTypes.js";
 
 // =============== //
 //     PLAYBACK    //
 // =============== //
 export const playTrack = (track, user, position) => ({
-  type: types.PLAY_TRACK,
+  type: actionTypes.PLAY_TRACK,
   track,
   user,
   position,
 });
 
 export const playTrackSuccess = (track, user, position) => ({
-  type: types.PLAY_TRACK_SUCCESS,
+  type: actionTypes.PLAY_TRACK_SUCCESS,
   track,
   user,
   position,
 });
 
 export const updateNowPlaying = (track, user, position) => ({
-  type: types.UPDATE_NOW_PLAYING,
+  type: actionTypes.UPDATE_NOW_PLAYING,
   track,
   user,
   position,
@@ -33,14 +33,14 @@ export const updateNowPlaying = (track, user, position) => ({
 // =============== //
 //   MUTE/UNMUTE   //
 // =============== //
-export const mutePlayback = () => ({ type: types.MUTE_PLAYBACK });
-export const unmutePlayback = () => ({ type: types.UNMUTE_PLAYBACK });
+export const mutePlayback = () => ({ type: actionTypes.MUTE_PLAYBACK });
+export const unmutePlayback = () => ({ type: actionTypes.UNMUTE_PLAYBACK });
 
 // ================== //
 //   PLAYING CONTEXT  //
 // ================== //
 export const fetchPlayingContextSuccess = (playingContext) => ({
-  type: types.FETCH_PLAYING_CONTEXT_SUCCESS,
+  type: actionTypes.FETCH_PLAYING_CONTEXT_SUCCESS,
   playingContext,
 });
 
