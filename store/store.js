@@ -7,15 +7,15 @@ import thunk from "redux-thunk";
 
 import { reducers } from "../ROOT-REDUCER/index.js";
 
-import devicesMiddleware from "../middleware/devicesMiddleware.js";
-import loggerMiddleware from "../middleware/loggerMiddleware.js";
-import playbackMiddleware from "../middleware/playbackMiddleware";
-import searchMiddleware from "../middleware/searchMiddleware.js";
-import sessionMiddleware from "../middleware/sessionMiddleware.js";
-import socketMiddlewareDefault from "../middleware/socketMiddleware.js";
-import { socketMiddleware } from "../middleware/socketMiddleware.js";
+import devicesMiddleware from "../features/devices/devicesMiddleware.js";
+import loggerMiddleware from "../features/logger/loggerMiddleware.js";
+import playbackMiddleware from "../features/playback/playbackMiddleware.js";
+import searchMiddleware from "../features/search/searchMiddleware.js";
+import sessionMiddleware from "../features/session/sessionMiddleware.js";
+import socketMiddlewareDefault from "../features/sockets/socketsMiddleware.js";
+import { socketMiddleware } from "../features/sockets/socketsMiddleware.js";
 
-import { load } from "../actions/sessionActions.js";
+import { load } from "../features/session/sessionActions.js";
 
 // ================== //
 //        STORE       //
@@ -23,7 +23,6 @@ import { load } from "../actions/sessionActions.js";
 
 export const initStore = (initialState = {}) => {
   const store = createStore(
-    // Below is our exported combineReducers() from our Root Reducer
     reducers(),
     initialState,
     applyMiddleware(

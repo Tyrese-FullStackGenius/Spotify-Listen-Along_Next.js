@@ -8,8 +8,8 @@ const querystring = require("querystring");
 const request = require("request");
 
 const Router = express.Router;
-const AppConfig = require("../../config/app.js");
-const AuthConfig = require("../../config/authorization.js");
+const AppConfig = require("../config/app.js");
+const AuthConfig = require("../config/authorization.js");
 
 const redirect_uri = `${AppConfig.HOST}/auth/callback`;
 const client_id = AuthConfig.CLIENT_ID;
@@ -38,7 +38,7 @@ const stateKey = "spotify_auth_state";
 // ========================= //
 //   AUTHORIZATION REQUEST   //
 // ========================= //
-auth.get("/login", (req, res) => {
+auth.get("/login", function (req, res) {
   let state = generateRandomString(16);
   res.cookie(stateKey, state);
 
@@ -63,7 +63,7 @@ auth.get("/login", (req, res) => {
 // ================= //
 // * note: after checking the state parameter, the app will request REFRESH and ACCESS TOKENS
 
-auth.get("/callback", (req, res) => {
+auth.get("/callback", function (req, res) {
   // REF: https://stackoverflow.com/questions/45580904/implement-log-in-with-spotify-popup
 
   // var was used in ref, but we can use let... right?
@@ -85,7 +85,7 @@ auth.get("/callback", (req, res) => {
   } else {
     res.clearCookie(stateKey);
     var authOptions = {
-      url: "https:accounts.spotify.com/api/token",
+      url: "https://accounts.spotify.com/api/token",
       form: {
         code: code,
         redirect_uri: redirect_uri,
@@ -168,4 +168,4 @@ auth.post("/token", function (req, res) {
   }
 });
 
-module.exports = authorization;
+module.exports = auth;

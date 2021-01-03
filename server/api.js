@@ -7,11 +7,11 @@
 const express = require("express");
 const SpotifyWebAPI = require("spotify-web-api-node");
 
-const AuthConfig = require("../../config/authorization.js");
+const AuthConfig = require("../config/authorization.js");
 
-const RecRobot = require("../models/Robot.js");
-const QueueItem = require("../models/QueueItem.js");
-const QueueManager = require("../models/QueueManager.js");
+const Robot = require("./models/RecommendationRobot.js");
+const QueueItem = require("./models/QueueItem.js");
+const QueueManager = require("./models/QueueManager.js");
 
 const spotifyApi = new SpotifyWebAPI({
   clientId: AuthConfig.CLIENT_ID,
@@ -58,14 +58,14 @@ const getToken = (callback) => {
 };
 
 // Initialize our Recommender Robot
-const robotUser = new RecRobot({
+const roboUser = new Robot({
   getToken: getToken,
   spotifyApi: spotifyApi,
 });
 
 // Add our Recommender Robot to our users array.
 // He'll always be in the room. Always. :)
-let users = [robotUser.toJSON()];
+let users = [roboUser.toJSON()];
 
 let globalSocket = null;
 let globalIo = null;
@@ -79,8 +79,8 @@ const queueManager = new QueueManager({
     const { track, user } = queueManager.getPlayingContext();
     // if one user happens to log-in on multiple tabs, just send "play track" on one tab,
     // and "update now playing" to other tabs....
-    users.forEach((user) => {
-      user.socketIdArray.forEach((socketId, index) => {
+    users.forEach((u) => {
+      u.socketIdArray.forEach((socketId, index) => {
         if (index === 0) {
           // Send our "play track" event
           globalIo.to(socketId).emit("play track", track, user);
@@ -106,17 +106,17 @@ const queueManager = new QueueManager({
       globalSocket.broadcast.emit("update queue", queueManager.getQueue());
 
     // Since our queue is empty, have Robot generate a recommendation based on Spotify seeds
-    const robotRecommendation = await robotUser.generateRecommendation(
+    const roboRecommendation = await roboUser.generateRecommendations(
       queueManager.playedHistory,
       getToken,
       spotifyApi
     );
     // As long as Robot returns a recommendation, add the recommended item to our queue
-    if (robotRecommendation !== null) {
+    if (roboRecommendation !== null) {
       queueManager.addItem(
         new QueueItem({
-          track: robotRecommendation,
-          user: robotUser,
+          track: roboRecommendation,
+          user: roboUser,
         }).toJSON()
       );
     }
@@ -127,7 +127,7 @@ queueManager.read();
 queueManager.initialize();
 
 const exportedApi = (io) => {
-  // Still a little confused by this, but following TOB's recs...
+  // Still a little confused by the below, but following TOB's recommendationss...
   let api = Router();
 
   globalIo = io;

@@ -14,7 +14,7 @@ import usersReducer from "../features/users/usersReducer.js";
 //    ROOT REDUCER    //
 // ================== //
 
-export const reducers = () => {
+export const reducers = () =>
   // pass through an object containing our slice reducers...
   combineReducers({
     // combineReducers will call each slice reducer individually,
@@ -27,7 +27,6 @@ export const reducers = () => {
     search: searchReducer,
     devices: devicesReducer,
   });
-};
 
 export const getDevices = (state) => fromDevices.getDevices(state.devices);
 

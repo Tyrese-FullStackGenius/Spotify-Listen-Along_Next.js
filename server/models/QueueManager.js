@@ -48,6 +48,7 @@ class QueueManager {
   addItem(queueItem) {
     this.queue.push(queueItem);
     this.handleQueueChanged();
+    // If there is no track playing, play the track we're trying to add to the queue
     if (this.playingContext.track === null) {
       this.play();
     }
@@ -67,8 +68,11 @@ class QueueManager {
 
   play() {
     console.log(`api.js says... > play`);
+    // If there is already at least one song in the queue...
     if (this.queue.length > 0) {
       console.log(`api.js says... > play has a queue`);
+
+      // Let's add to our queue...
       const queueItem = this.queue.shift();
       this.handleQueueChanged();
       this.playingContext = {
@@ -85,6 +89,8 @@ class QueueManager {
         this.play();
       }, 2000 + queueItem.track.duraction_ms);
       this.onPlay();
+
+      // Otherwise... no song in the queue!
     } else {
       this.playingContext = {
         track: null,

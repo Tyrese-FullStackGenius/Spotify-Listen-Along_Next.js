@@ -8,8 +8,8 @@
 
 class Robot {
   constructor(options) {
-    this.image = options.image || "/static/recommender-robot-icon.png";
-    this.id = options.id || "Robot";
+    this.image = options.image || "/static/recommendation-robot-icon.png";
+    this.id = options.id || "Rob";
     this.recommendations = {};
   }
 
@@ -23,7 +23,7 @@ class Robot {
       const key = trackIds.join("-");
       if (!(key in this.recommendations)) {
         await getToken();
-        const res = await spotifyApi.generateRecommendations({
+        const res = await spotifyApi.getRecommendations({
           seed_tracks: trackIds,
         });
         this.recommendations[key] = res.body.tracks;
@@ -44,7 +44,6 @@ class Robot {
       images: [{ url: this.image }],
       type: "robot",
       socketIdArray: [],
-      // *** to-do: add ??? attributes in order to be compatible with other true users...
     };
   }
 }

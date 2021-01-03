@@ -34,7 +34,6 @@ Listen Along is bringing back listening rooms. Intimate opportunities to share a
 
 - Multiple rooms
 - Build-out chatbox functionality for each room
-<!--
 
 ## Install:
 
@@ -42,7 +41,7 @@ Listen Along is bringing back listening rooms. Intimate opportunities to share a
 <summary>Instructions...</summary>
 <br />
 
-## Setting up
+### Setting up
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
@@ -58,7 +57,7 @@ You will need to register your own Spotify app and set the credentials in a coup
    - `CLIENT_ID`
    - `CLIENT_SECRET`
 
-Example:
+For Example:
 
 ```
 HOST=http://localhost:3000
@@ -66,14 +65,14 @@ CLIENT_ID=<your_client_id>
 CLIENT_SECRET=<your_client_secret>
 ```
 
-## Dependencies
+### Dependencies
 
 Install the dependencies running `npm install`.
 
-## Running
+### Running
 
 During development, run `npm run dev`.
 
 When running on production, run `npm run build && npm run start`.
 
-</details> -->
+</details>

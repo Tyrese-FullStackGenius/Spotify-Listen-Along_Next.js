@@ -11,12 +11,13 @@ const next = require("next");
 
 const dev = process.env.NODE_ENV !== "production";
 const nextApp = next({ dev });
+const nextHandler = nextApp.getRequestHandler();
 
 const compression = require("compression");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 
-const authorization = require("./authorization.js");
+const auth = require("./authorization.js");
 const api = require("./api.js");
 
 nextApp.prepare().then(() => {
@@ -35,10 +36,14 @@ nextApp.prepare().then(() => {
   );
 
   // Auth Router
-  app.use("/auth", authorization);
+  app.use("/auth", auth);
 
   // API + Web Socket Router
   app.use("/api", api(io));
+
+  app.get("*", (req, res) => {
+    return nextHandler(req, res);
+  });
 
   // *** to-do: 404???
 

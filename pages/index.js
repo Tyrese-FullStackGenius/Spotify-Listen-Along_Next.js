@@ -1,7 +1,6 @@
 // REF: https://react-redux.js.org/using-react-redux/connect-mapdispatch
 // REF: https://react-redux.js.org/using-react-redux/connect-mapstate
 
-import Link from "next/link";
 import React from "react";
 import withRedux from "next-redux-wrapper";
 import Layout from "../components/Layout.js";
