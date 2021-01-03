@@ -14,6 +14,8 @@ import AddToQueue from "../components/AddToQueue.js";
 import NowPlaying from "../components/NowPlaying.js";
 import Devices from "../components/Devices.js";
 
+import PageWithIntl from "../components/ReactIntl.js";
+
 // ================= //
 //        HOME       //
 // ================= //
@@ -39,6 +41,8 @@ class Main extends React.Component {
         <div className="app">
           <div className="queue-container">
             <Queue items={this.props.queue} session={this.props.session} />
+
+            {/* If user is logged-in, then show Queue and Devices */}
             {this.props.session.user !== null ? <AddToQueue /> : null}
             {this.props.session.user !== null ? <Devices /> : null}
           </div>
@@ -59,4 +63,4 @@ const mapStateToProps = (state) => ({
   session: state.session,
 });
 
-export default withRedux(initStore, mapStateToProps, null)(Main);
+export default withRedux(initStore, mapStateToProps, null)(PageWithIntl(Main));
