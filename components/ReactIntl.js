@@ -10,7 +10,7 @@ if (typeof window !== "undefined" && window.ReactIntlLocaleData) {
 
 export default (Page) => {
   const IntlPage = injectIntl(Page);
-  return class PageWithIntl extends Component {
+  return class PageWithIntl extends React.Component {
     static async getInitialProps(context) {
       let props;
       if (typeof Page.getInitialProps === "function") {
@@ -23,7 +23,7 @@ export default (Page) => {
         req || window.__NEXT_DATA__.props.initialProps;
 
       // * note: We need to always update the Current Time on the page load because the <IntlProvider> will be a new instance even with pushState routing
-      const now = Data.now();
+      const now = Date.now();
 
       return { ...props, locale, messages, now };
     }

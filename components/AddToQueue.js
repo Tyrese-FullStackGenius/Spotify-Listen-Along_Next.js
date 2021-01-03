@@ -17,7 +17,7 @@ import { queueTrack } from "../features/queue/queueActions.js";
 // ================== //
 // Use SEARCH RESULTS LIST component in ADD TO QUEUE render directly below
 
-class SearchResultsList extends Component {
+class SearchResultsList extends React.Component {
   render() {
     const { results, focus } = this.props;
     return (
@@ -54,7 +54,7 @@ class SearchResultsList extends Component {
 //   ADD TO QUEUE   //
 // ================ //
 
-class AddToQueue extends Component {
+class AddToQueue extends React.Component {
   state = {
     text: this.props.text || "",
     focus: -1,

@@ -31,9 +31,7 @@ const glob = require("glob");
 // ===================== //
 
 // Retrieve supported languages by looking for the translations I added to listen-along-app-next/languages
-const languages = glob
-  .sync("./languages/*.json")
-  .map((f) => basename(f, ".json"));
+const languages = glob.sync("./lang/*.json").map((f) => basename(f, ".json"));
 
 const localeDataCache = new Map();
 const getLocaleDataScript = (locale) => {
@@ -49,7 +47,7 @@ const getLocaleDataScript = (locale) => {
 };
 
 const getMessages = (locale) => {
-  return require(`../languages/${locale}.json`);
+  return require(`../lang/${locale}.json`);
 };
 
 nextApp.prepare().then(() => {
