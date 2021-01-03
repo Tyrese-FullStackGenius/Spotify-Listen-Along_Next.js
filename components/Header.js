@@ -5,6 +5,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 import Link from "next/link";
+import { FormattedMessage } from "react-intl";
 
 import { login } from "../features/session/sessionActions.js";
 import {
@@ -25,10 +26,12 @@ const Header = ({ session, muted, mutePlayback, unmutePlayback, login }) => (
     {/* *** to-do: ADD YOUR LINKS, BRO! Do you actually wanna do an about page? *** */}
     <Link href="/">
       <a className="link-base main-link">
-        <img src="" />
+        <img src="/public/images/listen-along-wordmark-dark.svg" height="50" />
       </a>
     </Link>
-    {/* <a className="link-base">ABOUT</a> */}
+    {/* <a className="link-base" href="# ANCHOR TO BOTTOM/ABOUT SECTION">
+      <FormattedMessage id="about" />
+    </a> */}
     {session.user ? (
       <div className="media user-header">
         <div className="media__img">
@@ -38,7 +41,7 @@ const Header = ({ session, muted, mutePlayback, unmutePlayback, login }) => (
               (session.user.images &&
                 session.user.images.length &&
                 session.user.images[0].url) ||
-              "/images/user-icon.png"
+              "/images/user-icon.svg"
             }
             width="30"
             height="30"
@@ -55,7 +58,7 @@ const Header = ({ session, muted, mutePlayback, unmutePlayback, login }) => (
         style={{ float: "right" }}
         onClick={login}
       >
-        LOGIN
+        <FormattedMessage id="login" />
       </button>
     )}
     {session.user ? (
