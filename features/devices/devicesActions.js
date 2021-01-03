@@ -28,11 +28,11 @@ export const transferPlaybackToDevice = (deviceId) => ({
   deviceId,
 });
 
-export const transferPlaybackToDeviceSuccess = () => ({
+export const transferPlaybackToDeviceSuccess = (list) => ({
   type: actionTypes.TRANSFER_PLAYBACK_TO_DEVICE_SUCCESS,
 });
 
-export const transferPlaybackToDeviceError = (err) => ({
+export const transferPlaybackToDeviceError = (list) => ({
   type: actionTypes.TRANSFER_PLAYBACK_TO_DEVICE_ERROR,
   err,
 });
