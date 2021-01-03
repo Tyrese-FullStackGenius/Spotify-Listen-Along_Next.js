@@ -1,8 +1,10 @@
 // REF: https://react-redux.js.org/using-react-redux/connect-mapdispatch
 // REF: https://react-redux.js.org/using-react-redux/connect-mapstate
+// REF: https://github.com/formatjs/formatjs
 
 import React from "react";
 import { connect } from "react-redux";
+import { injectIntl } from "react-intl";
 
 import {
   searchTracks,
@@ -15,29 +17,29 @@ import { queueTrack } from "../features/queue/queueActions.js";
 // ================== //
 // Use SEARCH RESULTS LIST component in ADD TO QUEUE render directly below
 
-class SearchResultsList extends React.Component {
+class SearchResultsList extends Component {
   render() {
     const { results, focus } = this.props;
     return (
       <ul className="add-to-queue__search-results">
-        {results.map((r, index) => {
+        {results.map((result, index) => {
           const isFocused = focus === index;
           const className =
             "add-to-queue__search-results-item" +
             (isFocused ? " add-to-queue__search-results-item--focused" : "");
           return (
             <li
-              key={r.id}
+              key={result.id}
               className={className}
-              onClick={() => this.props.onSelect(r.id)}
+              onClick={() => this.props.onSelect(result.id)}
             >
               <div className="container">
                 <div className="album-img">
-                  <img src={r.album.images[2].url} />
+                  <img src={result.album.images[2].url} />
                 </div>
                 <div className="flex-item">
-                  <div className="song-name">{r.name}</div>
-                  <div>{r.artists[0].name}</div>
+                  <div className="song-name">{result.name}</div>
+                  <div>{result.artists[0].name}</div>
                 </div>
               </div>
             </li>
@@ -52,7 +54,7 @@ class SearchResultsList extends React.Component {
 //   ADD TO QUEUE   //
 // ================ //
 
-class AddToQueue extends React.Component {
+class AddToQueue extends Component {
   state = {
     text: this.props.text || "",
     focus: -1,
@@ -114,12 +116,13 @@ class AddToQueue extends React.Component {
   };
 
   render() {
+    const placeholder = this.props.intl.formatMessage({ id: "queue.add" });
     const results = this.props.search.results;
     return (
       <div className="add-to-queue">
         <input
           className="add-to-queue__input"
-          placeholder="placeholder..."
+          placeholder={placeholder}
           value={this.state.text}
           onChange={this.handleChange}
           onKeyDown={this.handleKeyDown}
@@ -149,4 +152,7 @@ const mapStateToProps = (state) => ({
   search: state.search,
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddToQueue);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(injectIntl(AddToQueue));
