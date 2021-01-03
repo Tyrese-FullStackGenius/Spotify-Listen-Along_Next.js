@@ -4,10 +4,22 @@
 // ============================ //
 */
 
+:root {
+  --primaryColorLight: #fdfbf5;
+  --primaryColorDark: #202020;
+
+  --accentColorYellow: #f6a800;
+  --accentColorGreen: #09553f;
+
+  --boxShadowColor: rgba(32, 32, 32, 0.3);
+
+  --onHoverHighlightLight: rgba(246, 168, 0, 0.2);
+}
+
 .layout-base {
-  color: #333333;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 15px;
+  color: var(--primaryColorDark);
+  font-family: montserrat, sans-serif;
+  font-size: 18px;
 }
 
 /* // ======================================================== // */

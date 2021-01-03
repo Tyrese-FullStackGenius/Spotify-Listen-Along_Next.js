@@ -1,3 +1,5 @@
+// REF: https://nextjs.org/docs/basic-features/built-in-css-support
+
 import Document, { Head, Main, NextScript } from "next/document";
 
 // * note: This document (which is SSR-only) needs to be customized to expose the locale data for the user's locale for React Intl to work in the browser.
@@ -15,7 +17,6 @@ export default class IntlDocument extends Document {
     return (
       <html>
         <Head>
-          <title>Listen Along - Music Powered by Spotify</title>
           <meta
             name="description"
             content="Listen Along is bringing back collaborative listening rooms. Intimate opportunities to share and experience music with your friends. A shared queue can be added to and edited by anyone present in the listening room. Vote songs up the queue and jam synchronously together via Spotify—-even when you can't be together."
