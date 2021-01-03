@@ -1,9 +1,11 @@
 // REF: https://react-redux.js.org/using-react-redux/connect-mapdispatch
 // REF: https://react-redux.js.org/using-react-redux/connect-mapstate
 // REF: https://developer.spotify.com/documentation/web-api/guides/using-connect-web-api/
+// REF: https://github.com/formatjs/formatjs
 
 import React from "react";
 import { connect } from "react-redux";
+import { FormattedMessage } from "react-intl";
 
 import {
   fetchAvailableDevices,
@@ -28,7 +30,9 @@ class Devices extends React.PureComponent {
     } = this.props;
     return (
       <div style={{ paddingBottom: "10px" }}>
-        <h2>{devices.title}</h2>
+        <h2>
+          <FormattedMessage id="devices.title" />
+        </h2>
         <button
           className="btn--base btn--dark"
           disabled={isFetching}
@@ -36,10 +40,12 @@ class Devices extends React.PureComponent {
             fetchAvailableDevices();
           }}
         >
-          Fetch Devices
+          <FormattedMessage id="devices.fetch" />
         </button>
         {devices.length === 0 ? (
-          <p>No Devices...</p>
+          <p>
+            <FormattedMessage id="devices.empty" />
+          </p>
         ) : (
           <table>
             <tbody>
@@ -54,7 +60,7 @@ class Devices extends React.PureComponent {
                           transferPlaybackToDevice(device.id);
                         }}
                       >
-                        Transfer to Device
+                        <FormattedMessage id="devices.transfer" />
                       </button>
                     )}
                   </td>
