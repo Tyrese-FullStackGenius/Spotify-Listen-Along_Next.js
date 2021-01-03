@@ -18,14 +18,14 @@ const client_secret = AuthConfig.CLIENT_SECRET;
 let auth = Router();
 
 // Generates a random string containing numbers and letters
-// length ==> The length of the string
-// text ==> The generated string
-const generateRandomString = (length) => {
-  let text = "";
-  let possibleText =
+// ==> length = The length of the string
+// ==> text = The generated string
+var generateRandomString = (length) => {
+  var text = "";
+  var possibleText =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-  for (let i = 0; i < length; i++) {
+  for (var i = 0; i < length; i++) {
     text += possibleText.charAt(
       Math.floor(Math.random() * possibleText.length)
     );
@@ -33,19 +33,19 @@ const generateRandomString = (length) => {
   return text;
 };
 
-const stateKey = "spotify_auth_state";
+var stateKey = "spotify_auth_state";
 
 // ========================= //
 //   AUTHORIZATION REQUEST   //
 // ========================= //
 auth.get("/login", function (req, res) {
-  let state = generateRandomString(16);
+  var state = generateRandomString(16);
   res.cookie(stateKey, state);
 
   // SCOPES:
   // ==> • user-read-playback-state | Read access to a user's player state
   // ==> • user-modify-playback-state | Write access to a user's playback state
-  let scope = "user-read-playback-state user-modify-playback-state";
+  var scope = "user-read-playback-state user-modify-playback-state";
   res.redirect(
     "https://accounts.spotify.com/authorize?" +
       querystring.stringify({
