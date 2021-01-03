@@ -1,13 +1,21 @@
 // REF: https://nextjs.org/docs/basic-features/built-in-css-support
 
-import "bootstrap/dist/css/bootstrap.css";
 import "../public/styles/style-main.css";
+import { Provider } from "react-redux";
+import { createWrapper } from "next-redux-wrapper";
+import { initStore } from "../store/store.js";
 
 import App from "next/app";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
-}
+const store = initStore();
+
+const MyApp = ({ Component, pageProps }) => {
+  return (
+    <Provider store={store}>
+      <Component {...pageProps} />
+    </Provider>
+  );
+};
 
 // MyApp.getInitialProps = async (appContext) => {
 //   // calls page's `getInitialProps` and fills `appProps.pageProps`
