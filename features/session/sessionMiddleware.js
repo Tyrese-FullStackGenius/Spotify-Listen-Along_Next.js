@@ -92,6 +92,7 @@ export default (store) => (next) => (action) => {
         )}`;
       };
 
+      // REF: https://stackoverflow.com/questions/4068373/center-a-popup-window-on-screen
       const width = 450,
         height = 730,
         left = window.screen.width / 2 - width / 2,
