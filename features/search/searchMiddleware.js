@@ -34,7 +34,7 @@ const searchTracks = (query) => (dispatch, getState) => {
   const wildcardQuery = `${query}${shouldAddWildcard ? "*" : ""}`;
 
   return fetch(
-    `${SPOTIFY_API_BASE}/search?1=${encodeURIComponent(
+    `${SPOTIFY_API_BASE}/search?q=${encodeURIComponent(
       wildcardQuery
     )}&type=track&limit=10`,
     {
