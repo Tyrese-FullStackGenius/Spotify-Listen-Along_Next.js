@@ -4,6 +4,8 @@
 
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
+// THUNK is a specific kind of Redux function that can contain asynchronous logic
+// This Redux Thunk middleware modifies the store to let us pass functions into DISPATCH
 
 import { reducers } from "../ROOT-REDUCER/index.js";
 
@@ -27,8 +29,6 @@ export const initStore = (initialState = {}) => {
     initialState,
     applyMiddleware(
       thunk,
-      // THUNK is a specific kind of Redux function that can contain asynchronous logic
-      // This Redux Thunk middleware modifies the store to let us pass functions into DISPATCH
       devicesMiddleware,
       loggerMiddleware,
       playbackMiddleware,

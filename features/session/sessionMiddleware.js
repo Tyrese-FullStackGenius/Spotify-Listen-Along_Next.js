@@ -60,10 +60,10 @@ export default (store) => (next) => (action) => {
       const needsToUpdate =
         !expiresIn || expiresIn - Date.now() < 10 * 60 * 1000;
       if (needsToUpdate) {
-        console.log(`sessionMiddleware > needs to update access token`);
+        console.log(`sessionMiddleware says... > needs to update access token`);
         const refreshToken = session.refresh_token;
         if (refreshToken) {
-          console.log(`sessionMiddleware > using refresh token`);
+          console.log(`sessionMiddleware says... > using refresh token`);
           store
             .dispatch(updateToken())
             .then(() => {
@@ -74,7 +74,9 @@ export default (store) => (next) => (action) => {
             });
         }
       } else {
-        console.log(`sessionMiddleware > no need to update access token`);
+        console.log(
+          `sessionMiddleware says... > no need to update access token`
+        );
         store.dispatch(getCurrentUser()).then(() => {
           store.dispatch(loginSuccess());
         });
@@ -142,6 +144,7 @@ export default (store) => (next) => (action) => {
           `, left=` +
           left
       );
+
       break;
     }
 

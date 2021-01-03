@@ -17,9 +17,6 @@ import usersReducer from "../features/users/usersReducer.js";
 export const reducers = () =>
   // pass through an object containing our slice reducers...
   combineReducers({
-    // combineReducers will call each slice reducer individually,
-    // pass in the specific slice of the Redux state,
-    // and include each return value in the final new Redux state object
     queue: queueReducer,
     playback: playbackReducer,
     session: sessionReducer,
