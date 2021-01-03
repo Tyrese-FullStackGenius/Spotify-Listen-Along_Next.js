@@ -28,7 +28,7 @@ let accessToken = null;
 
 // Fetch a new Token
 const fetchNewToken = (callback) => {
-  console.log("Fetching new token..");
+  console.log("fetchNewToken method says... > Fetching new token..");
   spotifyApi
     .clientCredentialsGrant()
     .then((data) => {
@@ -48,7 +48,7 @@ const fetchNewToken = (callback) => {
     });
 };
 
-// Returns a new token OR the cached one is still valid
+// Returns a new token OR the cached one must still be valid
 const getToken = (callback) => {
   if (accessToken !== null) {
     callback && callback(accessToken);
@@ -67,6 +67,7 @@ const roboUser = new Robot({
 // He'll always be in the room. Always. :)
 let users = [roboUser.toJSON()];
 
+// REF: https://stackoverflow.com/questions/53030744/should-i-use-a-global-variable-to-share-socket-io-instance-across-entire-server
 let globalSocket = null;
 let globalIo = null;
 
@@ -77,8 +78,7 @@ let globalIo = null;
 const queueManager = new QueueManager({
   onPlay: () => {
     const { track, user } = queueManager.getPlayingContext();
-    // if one user happens to log-in on multiple tabs, just send "play track" on one tab,
-    // and "update now playing" to other tabs....
+    // if one user happens to log-in on multiple tabs, just send "play track" on one tab, and "update now playing" to other tabs....
     users.forEach((u) => {
       u.socketIdArray.forEach((socketId, index) => {
         if (index === 0) {
@@ -105,7 +105,7 @@ const queueManager = new QueueManager({
     globalSocket &&
       globalSocket.broadcast.emit("update queue", queueManager.getQueue());
 
-    // Since our queue is empty, have Robot generate a recommendation based on Spotify seeds
+    // Since our queue is empty, have our Recommender Robot generate a recommendation based on Spotify seeds
     const roboRecommendation = await roboUser.generateRecommendations(
       queueManager.playedHistory,
       getToken,
@@ -250,7 +250,8 @@ const exportedApi = (io) => {
       users.forEach((user, i) => {
         user.socketIdArray.forEach((socketId, j) => {
           if (socketId === socket.id) {
-            (userIndex = i), (socketIdIndex = j);
+            userIndex = i;
+            socketIdIndex = j;
           }
         });
       });
@@ -269,7 +270,6 @@ const exportedApi = (io) => {
             "update users",
             users.map((u) => u.user)
           );
-          // ...then send our "update users" event
           socket.broadcast.emit(
             "update users",
             users.map((u) => u.user)
