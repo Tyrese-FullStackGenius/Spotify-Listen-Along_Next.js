@@ -1,8 +1,10 @@
 // REF: https://react-redux.js.org/using-react-redux/connect-mapdispatch
 // REF: https://react-redux.js.org/using-react-redux/connect-mapstate
+// REF: https://github.com/formatjs/formatjs
 
 import React from "react";
 import { connect } from "react-redux";
+import { FormattedMessage } from "react-intl";
 
 import QueueItem from "./QueueItem.js";
 
@@ -19,9 +21,13 @@ class Queue extends React.PureComponent {
     const { items, session } = this.props;
     return (
       <div style={{ paddingBottom: "10px" }}>
-        <h2>QUEUE</h2>
+        <h2>
+          <FormattedMessage id="queue.title" />
+        </h2>
         {items.length === 0 ? (
-          <p>Queue is empty...</p>
+          <p>
+            <FormattedMessage id="queue.empty" />
+          </p>
         ) : (
           <table className="queue">
             <tbody>

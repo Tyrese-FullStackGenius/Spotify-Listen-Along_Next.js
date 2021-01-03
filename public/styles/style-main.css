@@ -203,6 +203,10 @@ rest of the MVP finalized
   max-width: 550px;
 }
 
+tr .queue-item-table-data {
+  padding-right: 10px;
+}
+
 /* 
 // ================= //
 //       USERS       //
