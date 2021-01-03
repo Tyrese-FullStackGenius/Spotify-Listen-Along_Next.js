@@ -25,6 +25,7 @@ export const reducers = () =>
     devices: devicesReducer,
   });
 
+// getIsFetching + getDevices are methods from devicesReducer.js
 export const getDevices = (state) => fromDevices.getDevices(state.devices);
 
 export const getIsFetchingDevices = (state) =>
