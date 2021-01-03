@@ -34,6 +34,7 @@ class QueueManager {
     return this.queue;
   }
 
+  // Sort queue according to user votes
   sort() {
     this.queue.sort((a, b) => {
       const diffVoters = b.voters.length - a.voters.length;
@@ -87,7 +88,7 @@ class QueueManager {
       });
       setTimeout(() => {
         this.play();
-      }, 2000 + queueItem.track.duraction_ms);
+      }, 2000 + queueItem.track.duration_ms);
       this.onPlay();
 
       // Otherwise... no song in the queue!
@@ -103,7 +104,7 @@ class QueueManager {
     }
   }
 
-  voteUpI(user, id) {
+  voteUpId(user, id) {
     const index = this.queue.findIndex((item) => item.id === id);
     if (index === -1) {
       return false;
@@ -119,6 +120,7 @@ class QueueManager {
     }
   }
 
+  // Save our queue locally via fs
   save() {
     fs.writeFileSync(
       `./queue.json`,
@@ -130,6 +132,7 @@ class QueueManager {
     );
   }
 
+  // Read our locally stored queue via fs
   read() {
     try {
       const data = JSON.parse(fs.readFileSync(`./queue.json`));
