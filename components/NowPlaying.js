@@ -16,6 +16,8 @@ class NowPlaying extends React.PureComponent {
       currentPosition: 0,
     };
     this.timer = null;
+
+    // REF: https://stackoverflow.com/questions/53526964/why-this-tick-and-this-tick-are-not-the-same
     this.tick = () => {
       this.setState({
         currentPosition:
@@ -67,7 +69,7 @@ class NowPlaying extends React.PureComponent {
               {this.props.track.name}
             </div>
             <div className="now-playing__artist-name">
-              {this.props.track.artists.map((a) => a.name).join(", ")}
+              {this.props.track.artists.map((artist) => artist.name).join(", ")}
             </div>
             <div className="media__img">
               <img
@@ -76,7 +78,7 @@ class NowPlaying extends React.PureComponent {
                   (this.props.user.images &&
                     this.props.user.images.length &&
                     this.props.user.images[0].url) ||
-                  "/images/user-icon.png"
+                  "/images/user-icon.svg"
                 }
                 width="30"
                 height="30"
