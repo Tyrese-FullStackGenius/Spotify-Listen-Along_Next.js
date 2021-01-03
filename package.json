@@ -2,7 +2,7 @@
   "name": "listen-along",
   "version": "0.1.0",
   "engines": {
-    "node": "15.0.1"
+    "node": "15.x"
   },
   "description": "",
   "main": "index.js",
