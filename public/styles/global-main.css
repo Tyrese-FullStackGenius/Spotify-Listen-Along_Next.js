@@ -8,8 +8,7 @@
   --primaryColorLight: #fdfbf5;
   --primaryColorDark: #202020;
 
-  --accentColorYellow: #f6a800;
-  --accentColorGreen: #09553f;
+  --SpotifyGreen: #1ed760;
 
   --boxShadowColor: rgba(32, 32, 32, 0.3);
 
@@ -20,6 +19,8 @@
   color: var(--primaryColorDark);
   font-family: montserrat, sans-serif;
   font-size: 18px;
+
+  background-color: var(--primaryColorLight);
 }
 
 /* // ======================================================== // */
@@ -117,6 +118,16 @@ rest of the MVP finalized
   padding: 0 15px;
 }
 
+.btn--login {
+  background-color: var(--SpotifyGreen);
+  color: var(--primaryColorLight);
+
+  font-weight: 600;
+
+  border: none;
+  padding: 5px 20px;
+}
+
 .btn--dark {
   background-color: #bbc8d5;
   border: 1px solid #bbc8d5;
@@ -146,8 +157,8 @@ rest of the MVP finalized
 }
 
 .header-container {
-  background-color: #e3ebf4;
-  padding: 20px 40px;
+  background-color: var(--primaryColorLight);
+  padding: 20px 75px;
 }
 
 .user-header {
