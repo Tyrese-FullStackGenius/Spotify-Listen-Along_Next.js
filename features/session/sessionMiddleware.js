@@ -87,7 +87,7 @@ export default (store) => (next) => (action) => {
     // Login user...
     case LOGIN: {
       const getLoginURL = (scopes) => {
-        return `${Config.HOST}/auth/login?scope=${encodeURIComponent(
+        return `http://localhost:3000/auth/login?scope=${encodeURIComponent(
           scopes.join(" ")
         )}`;
       };
