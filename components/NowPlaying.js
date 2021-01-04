@@ -26,7 +26,19 @@ class NowPlaying extends React.PureComponent {
     };
   }
 
-  componentWillReceiveProps(props) {
+  // componentDidUpdate(props) {
+  //   if (
+  //     this.props.position !== props.position ||
+  //     this.props.track !== props.track
+  //   ) {
+  //     this.setState({
+  //       start: Date.now(),
+  //       currentPosition: 0,
+  //     });
+  //   }
+  // }
+
+  UNSAFE_componentWillReceiveProps(props) {
     if (
       this.props.position !== props.position ||
       this.props.track !== props.track

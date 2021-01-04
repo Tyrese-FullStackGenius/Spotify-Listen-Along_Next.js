@@ -15,6 +15,10 @@
   --onHoverHighlightLight: rgba(246, 168, 0, 0.2);
 }
 
+body {
+  background-color: var(--primaryColorLight);
+}
+
 .layout-base {
   color: var(--primaryColorDark);
   font-family: montserrat, sans-serif;

@@ -19,8 +19,7 @@ export default (Page) => {
 
       // Retrieve * locale * and * messages * from the req object. In the browser, use the same values that the server serialized
       const { req } = context;
-      const { locale, messages } =
-        req || window.__NEXT_DATA__.props.initialProps;
+      const { locale, messages } = req || window.__NEXT_DATA__.props;
 
       // * note: We need to always update the Current Time on the page load because the <IntlProvider> will be a new instance even with pushState routing
       const now = Date.now();
