@@ -2,7 +2,7 @@
   "name": "listen-along",
   "version": "1.0.0",
   "engines": {
-    "node": "15.0.1"
+    "node": "14.15.3"
   },
   "description": "",
   "main": "index.js",
@@ -36,7 +36,8 @@
     "socket.io": "2.0.3",
     "socket.io-client": "2.0.3",
     "spotify-web-api-node": "4.0.0",
-    "uuid": "3.1.0"
+    "uuid": "3.1.0",
+    "webpack-bundle-analyzer": "2.9.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
