@@ -67,36 +67,38 @@ class NowPlaying extends React.PureComponent {
       ).toFixed(2) + "%";
     const userName = this.props.user.display_name || this.props.user.id;
     return (
-      <div className="container now-playing-container row justify-content-center p-3">
-        <div className="now-playing__img col-lg-6">
+      <div className="now-playing-container row justify-content-center p-3">
+        <div className="now-playing-img-container">
           <img src={this.props.track.album.images[1].url} />
         </div>
-        <div className="col-lg-6 now-playing__details media">
-          <div className="now-playing__track-name">{this.props.track.name}</div>
-          <div className="now-playing__artist-name">
+        <div className="now-playing-details">
+          <div className="now-playing-track-name">{this.props.track.name}</div>
+          <div className="now-playing-artist-name">
             {this.props.track.artists.map((artist) => artist.name).join(", ")}
           </div>
-          <div className="media">
-            <img
-              className="user-image"
-              src={
-                (this.props.user.images &&
-                  this.props.user.images.length &&
-                  this.props.user.images[0].url) ||
-                "/images/user-icon.svg"
-              }
-              width="30"
-              height="30"
-              alt={userName}
-              title={userName}
-            />
+          <div className="now-playing-user-info">
+            <div className="now-playing-user-image-container">
+              <img
+                className="user-image"
+                src={
+                  (this.props.user.images &&
+                    this.props.user.images.length &&
+                    this.props.user.images[0].url) ||
+                  "/images/user-icon.svg"
+                }
+                width="30"
+                height="30"
+                alt={userName}
+                title={userName}
+              />
+            </div>
           </div>
-          <div className="user-name media">{userName}</div>
+          <div className="user-name">{userName}</div>
         </div>
 
-        <div className="now-playing__progress  row justify-content-center p-3">
+        <div className="now-playing-progress row justify-content-center p-3">
           <div
-            className="now-playing__progress_bar"
+            className="now-playing-progress-bar"
             style={{ width: percentage }}
           />
         </div>

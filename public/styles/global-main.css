@@ -31,26 +31,15 @@ body {
   background-color: var(--primaryColorLight);
 }
 
+#footer-container {
+  margin-bottom: 50px;
+}
+
 .made-with-love {
   text-align: center;
   margin: 0;
   font-weight: 100;
 }
-
-/* // ======================================================== // */
-
-/*
-*** to-do: 
-circle-back and clean up organization of CSS... 
-Temp., basic styling for now until I get the 
-rest of the MVP finalized 
-*/
-
-/* 
-// ============================ //
-//           COMPONENTS         // ===========================
-// ============================ //
-*/
 
 /* 
 // ================= //
@@ -72,6 +61,21 @@ rest of the MVP finalized
 
   min-width: 500px;
 }
+
+/* // ======================================================== // */
+
+/*
+*** to-do: 
+circle-back and clean up organization of CSS... 
+Temp., basic styling for now until I get the 
+rest of the MVP finalized 
+*/
+
+/* 
+// ============================ //
+//           COMPONENTS         // ===========================
+// ============================ //
+*/
 
 /* 
 // ================= //
@@ -96,7 +100,8 @@ rest of the MVP finalized
   align-items: center;
 }
 
-.user-image {
+.user-info-container img {
+  margin-right: 15px;
 }
 
 .user-name {
@@ -116,6 +121,74 @@ rest of the MVP finalized
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* 
+// ================= //
+//    NOW PLAYING    //
+// ================= //
+*/
+
+.now-playing-container {
+  border: 1px solid var(--primaryColorDark);
+  border-radius: 10px;
+  color: var(--primaryColorDark);
+  min-height: 350px;
+
+  width: 800px;
+  position: relative;
+  width: 90%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin: 10px auto;
+}
+
+.now-playing-img-container {
+  margin: 5px;
+}
+
+.now-playing-img-container img {
+  max-height: 275px;
+  float: left;
+  margin-right: 35px;
+}
+
+.now-playing-details {
+  margin: 5px;
+  padding: 15px;
+}
+
+.now-playing-track-name {
+  font-size: 2.2em;
+  padding-top: 1em;
+}
+
+.now-playing-artist-name {
+  font-size: 1.3em;
+  padding-top: 0.5em;
+}
+
+.now-playing-user-info {
+  padding-right: 15px;
+}
+
+.now-playing-user-image-container {
+  padding-right: 15px;
+}
+
+.now-playing-progress {
+}
+
+.now-playing-progress-bar {
+  bottom: 0;
+  background-color: #222222;
+  height: 5px;
+  position: absolute;
+  width: 100%;
 }
 
 /* 
@@ -248,63 +321,6 @@ table {
 
 /* 
 // ================= //
-//    NOW PLAYING    //
-// ================= //
-*/
-
-.now-playing-container {
-  border: 1px solid var(--primaryColorDark);
-  border-radius: 10px;
-  color: var(--primaryColorDark);
-  min-height: 350px;
-
-  width: 800px;
-  position: relative;
-  width: 90%;
-
-  margin: 10px auto;
-}
-
-.now-playing__img img {
-  width: auto;
-
-  max-height: 275px;
-}
-
-.now-playing__details {
-  width: 60%;
-  margin-left: 25px;
-  padding: 40px;
-}
-
-.now-playing__bd {
-  padding-left: 30px;
-}
-
-.now-playing__track-name {
-  font-size: 2em;
-  padding-top: 1em;
-}
-
-.now-playing__artist-name {
-  font-size: 1.5em;
-  padding-top: 0.5em;
-}
-
-.now-playing__user {
-  padding-top: 1.5em;
-}
-
-.now-playing__progress-bar {
-  bottom: 0;
-  background-color: #222222;
-  height: 5px;
-  position: absolute;
-  width: 100%;
-}
-
-/* 
-// ================= //
 //       QUEUE       //
 // ================= //
 */
@@ -351,9 +367,14 @@ table {
 
 .user-list-item {
   padding-right: 25px;
+  margin-left: 25px;
+
+  display: flex;
+  justify-content: center;
 }
 
 .user-image-container {
+  padding-right: 10px;
 }
 
 /* // ========================================================  // */
