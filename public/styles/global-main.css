@@ -60,12 +60,31 @@ rest of the MVP finalized
 }
 
 .queue-container {
-  float: left;
+  width: 400px;
 }
 
 .users-container {
-  float: right;
   width: 150px;
+}
+
+/* 
+// ================= //
+//      HEADER       //
+// ================= //
+*/
+
+.link-base {
+  line-height: 30px;
+  margin-right: 15;
+}
+
+.main-link {
+  margin-right: 10px;
+}
+
+.header-container {
+  background-color: var(--primaryColorLight);
+  padding: 20px 75px;
 }
 
 /* 
@@ -87,10 +106,6 @@ rest of the MVP finalized
 
 .add-to-queue__search-results-item--focused {
   background-color: #eeeeee;
-}
-
-.container {
-  display: flex;
 }
 
 .album-img {
@@ -134,14 +149,16 @@ rest of the MVP finalized
 
   font-weight: 600;
 
+  min-width: 215px;
+
   border: none;
   padding: 5px 20px;
 }
 
 .btn--dark {
-  background-color: #bbc8d5;
-  border: 1px solid #bbc8d5;
-  color: #333333;
+  background-color: var(--primaryColorDark);
+  border: 1px solid var(--primaryColorDark);
+  color: var(--primaryColorLight);
 }
 
 /* 
@@ -149,37 +166,6 @@ rest of the MVP finalized
 //      DEVICES      //
 // ================= //
 */
-
-/* 
-// ================= //
-//      HEADER       //
-// ================= //
-*/
-
-.link-base {
-  line-height: 30px;
-  margin-right: 15;
-}
-
-.main-link {
-  float: left;
-  margin-right: 10px;
-}
-
-.header-container {
-  background-color: var(--primaryColorLight);
-  padding: 20px 75px;
-}
-
-.user-header {
-  float: right;
-  width: 150px;
-}
-
-.playback-control {
-  float: right;
-  width: 200px;
-}
 
 /* 
 // ================= //

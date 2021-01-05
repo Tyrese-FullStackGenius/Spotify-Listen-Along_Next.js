@@ -9,7 +9,7 @@ const Layout = (props) => (
     <Header />
     <div>{props.children}</div>
     <div className="row justify-content-center p-1">
-      <div className="col-12">
+      <div className="container mt-5 pt-5 col-12" id="footer-container">
         <p className="made-with-love">
           made with <i className="fas fa-heart"></i> by tyler samuelson
         </p>
