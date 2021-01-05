@@ -27,6 +27,12 @@ body {
   background-color: var(--primaryColorLight);
 }
 
+.made-with-love {
+  text-align: center;
+  margin: 0;
+  font-weight: 100;
+}
+
 /* // ======================================================== // */
 
 /*
