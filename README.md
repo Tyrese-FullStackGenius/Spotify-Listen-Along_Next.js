@@ -35,6 +35,7 @@ Listen Along is bringing back listening rooms. Intimate opportunities to share a
 - Multiple rooms
 - Build-out chatbox functionality for each room
 - Get our Recommender-Robot functioning
+- Light/Dark modes! Add a switch to toggle modes.
 -
 
 ## Install:

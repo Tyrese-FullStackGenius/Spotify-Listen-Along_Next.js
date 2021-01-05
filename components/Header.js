@@ -24,10 +24,10 @@ const getNameFromUser = (user) => {
 
 const Header = ({ session, muted, mutePlayback, unmutePlayback, login }) => (
   <nav className="navbar sticky-top navbar-expand-lg navbar-light">
-    <ul className="navbar-nav header mr-auto mx-3">
-      <li className="nav-item mx-3 p-2">
+    <ul className="navbar-nav header mr-auto mx-5">
+      <li className="nav-item mx-3 p-2 wordmark-container">
         <Link href="/">
-          <a className="link-base main-link nav-link">
+          <a className="link-base nav-link">
             <img
               src="/images/listen-along-wordmark-dark.svg"
               height="65"
@@ -37,7 +37,7 @@ const Header = ({ session, muted, mutePlayback, unmutePlayback, login }) => (
         </Link>
       </li>
       {session.user ? (
-        <li className="nav-item mx-3 p-2">
+        <li className="nav-item mx-3 p-2 user-info-container">
           <img
             className="user-image"
             src={
@@ -53,16 +53,16 @@ const Header = ({ session, muted, mutePlayback, unmutePlayback, login }) => (
           <div className="user-name">{getNameFromUser(session.user)}</div>
         </li>
       ) : (
-        <li className="nav-item mx-3 p-2">
-          <button className="btn--base btn--login" onClick={login}>
+        <li className="nav-item mx-3 p-2 login-btn-container">
+          <button className="btn spotify-login" onClick={login}>
             <FormattedMessage id="login" />
           </button>
         </li>
       )}
       {session.user ? (
-        <li className="nav-item mx-3 p-2">
+        <li className="nav-item mx-3 p-2 mute-unmute-btn-container">
           <button
-            className="btn--base btn--dark"
+            className="btn dark"
             onClick={() => {
               muted ? unmutePlayback() : mutePlayback();
             }}

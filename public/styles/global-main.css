@@ -73,18 +73,45 @@ rest of the MVP finalized
 // ================= //
 */
 
+.wordmark-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-info-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-image {
+}
+
+.user-name {
+}
+
+.login-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .link-base {
   line-height: 30px;
-  margin-right: 15;
 }
 
 .main-link {
-  margin-right: 10px;
 }
 
-.header-container {
-  background-color: var(--primaryColorLight);
-  padding: 20px 75px;
+.header {
+  padding: 20px 5px;
+}
+
+.mute-unmute-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* 
@@ -143,7 +170,7 @@ rest of the MVP finalized
   padding: 0 15px;
 }
 
-.btn--login {
+.spotify-login {
   background-color: var(--SpotifyGreen);
   color: var(--primaryColorLight);
 
@@ -155,7 +182,11 @@ rest of the MVP finalized
   padding: 5px 20px;
 }
 
-.btn--dark {
+.btn.unmute-mute {
+  border-radius: 15px;
+}
+
+.btn.dark {
   background-color: var(--primaryColorDark);
   border: 1px solid var(--primaryColorDark);
   color: var(--primaryColorLight);
