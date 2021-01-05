@@ -8,15 +8,15 @@ import { FormattedMessage } from "react-intl";
 export default ({ items }) => {
   return (
     <div className="row justify-content-center p-3">
-      <h2 className="user-list__header">
+      <h2 className="user-list-header">
         <FormattedMessage id="online" />
       </h2>
-      <ul className="user-list">
+      <ul className="user-list col-12">
         {items.map((i, index) => {
           const userName = i.display_name || i.id;
           return (
-            <li key={index} className="user-list__item media">
-              <div className="media__img">
+            <li key={index} className="user-list-item">
+              <div className="user-image-container">
                 <img
                   className="user-image"
                   src={
@@ -29,7 +29,7 @@ export default ({ items }) => {
                   title={userName}
                 />
               </div>
-              <div className="user-name media">{userName}</div>
+              <div className="user-name">{userName}</div>
             </li>
           );
         })}

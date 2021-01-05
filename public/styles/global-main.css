@@ -68,7 +68,9 @@ rest of the MVP finalized
 }
 
 .users-container {
-  width: 150px;
+  margin-top: 75px;
+
+  min-width: 500px;
 }
 
 /* 
@@ -240,6 +242,10 @@ table {
   font-weight: 300;
 }
 
+.fa-icon {
+  padding-left: 5px;
+}
+
 /* 
 // ================= //
 //    NOW PLAYING    //
@@ -328,21 +334,26 @@ table {
 // ================= //
 */
 
+.users-container {
+}
+
+.user-list-header {
+}
+
 .user-list {
   list-style: none;
+
   margin: 0;
   padding: 0;
+
+  display: flex;
 }
 
-.user-list__item {
-  display: block;
-  margin-bottom: 0.5em;
+.user-list-item {
+  padding-right: 25px;
 }
 
-.user-list__header {
-  color: #999999;
-  font-size: 11px;
-  text-transform: uppercase;
+.user-image-container {
 }
 
 /* // ========================================================  // */
@@ -365,8 +376,4 @@ table {
   overflow: hidden;
   _overflow: visible;
   zoom: 1;
-}
-
-.media__img {
-  margin-right: 10px;
 }

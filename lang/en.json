@@ -1,7 +1,7 @@
 {
   "about": "About",
   "login": "Log in with Spotify",
-  "online": "Online",
+  "online": "Online Users",
   "queue.title": "Queue",
   "queue.empty": "The queue is empty, add a song.",
   "queue.add": "Add a song",

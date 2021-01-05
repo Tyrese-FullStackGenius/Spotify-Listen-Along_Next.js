@@ -56,7 +56,8 @@ class Devices extends React.PureComponent {
                   <td>
                     {device.is_active ? (
                       <strong>
-                        Active <i class="far fa-arrow-alt-circle-right"></i>
+                        Active{" "}
+                        <i class="far fa-arrow-alt-circle-right fa-icon"></i>
                       </strong>
                     ) : (
                       <button
