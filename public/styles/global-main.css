@@ -84,8 +84,8 @@ rest of the MVP finalized
 */
 
 .navbar {
-  background-color: var(--primaryColorLight);
-  box-shadow: 0px 3px 15px rgba(32, 32, 32, 0.2);
+  /* background-color: var(--primaryColorLight); */
+  /* box-shadow: 0px 3px 15px rgba(32, 32, 32, 0.2); */
 }
 
 .wordmark-container {
@@ -114,7 +114,8 @@ rest of the MVP finalized
 }
 
 .header {
-  padding: 20px 5px;
+  margin: 15px auto;
+  /* padding: 20px 15px; */
 }
 
 .mute-unmute-btn-container {
@@ -144,7 +145,7 @@ rest of the MVP finalized
   justify-content: center;
   align-items: center;
 
-  margin: 10px auto;
+  margin: 75px auto;
 }
 
 .now-playing-img-container {
@@ -188,7 +189,7 @@ rest of the MVP finalized
   background-color: #222222;
   height: 5px;
   position: absolute;
-  width: 100%;
+  width: 98%;
 }
 
 /* 
