@@ -1,4 +1,6 @@
 // REF: https://nextjs.org/docs/basic-features/built-in-css-support
+// REF: https://nextjs.org/docs/advanced-features/custom-document
+// REF: https://formatjs.io/docs/react-intl/
 
 import Document, { Head, Main, NextScript } from "next/document";
 
@@ -32,12 +34,16 @@ export default class IntlDocument extends Document {
 
           <link
             rel="shortcut icon"
-            href="/images/listen-along-wordmark-dark.svg"
+            href="/images/listen-along-favicon-dark.svg"
           />
           <meta
             name="viewport"
             content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width"
           />
+          <script
+            src="https://kit.fontawesome.com/0f84f97a69.js"
+            crossOrigin="anonymous"
+          ></script>
         </Head>
         <body className="custom_class">
           {this.props.customValue}
