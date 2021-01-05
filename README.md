@@ -53,7 +53,7 @@ You will need to register your own Spotify app and set the credentials in a coup
 
 1. Create an application on [Spotify's Developer Site](https://developer.spotify.com/my-applications/)
 
-2. Add both http://localhost:3000/auth/callback (for development) and <production_domain>/auth/callback (if you want to deploy your app somewhere) as redirect uris
+2. Add both http://localhost:3000/auth/callback (for development) and <production_domain>/auth/callback (if you want to deploy your app somewhere) as redirect uris in your Spotify App settings
 
 3. Create a `.env` file in the root of the project with the following variables;
 

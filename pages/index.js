@@ -4,6 +4,7 @@
 import React from "react";
 import withRedux from "next-redux-wrapper";
 import Layout from "../components/Layout.js";
+import About from "../components/About.js";
 import { initStore } from "../store/store.js";
 import { fetchQueue } from "../features/queue/queueActions.js";
 import { fetchUsers } from "../features/users/usersActions.js";
@@ -39,18 +40,21 @@ class Main extends React.Component {
           />
         ) : null}
         <div className="core-app-container">
-          <div className="queue-container">
+          <div className="queue-container container">
             <Queue items={this.props.queue} session={this.props.session} />
 
             {/* If user is logged-in, then show Queue */}
             {this.props.session.user !== null ? <AddToQueue /> : null}
           </div>
-          <div className="users-container">
+          <div className="users-container container">
             <Users items={this.props.users} />
 
             {/* If user is logged-in, then show Devices */}
             {this.props.session.user !== null ? <Devices /> : null}
           </div>
+        </div>
+        <div className="about-container container">
+          <About />
         </div>
       </Layout>
     );

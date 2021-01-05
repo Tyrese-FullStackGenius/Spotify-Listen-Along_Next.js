@@ -72,12 +72,18 @@ body {
   min-width: 500px;
 }
 
+.about-container {
+  margin-top: 100px;
+
+  min-width: 500px;
+}
+
 /* // ======================================================== // */
 
 /*
 *** to-do: 
 circle-back and clean up organization of CSS... 
-Temp., basic styling for now until I get the 
+Temp., ~basic styling for now until I get the 
 rest of the MVP finalized 
 */
 
@@ -385,6 +391,39 @@ table {
 
 .user-image-container {
   padding-right: 10px;
+}
+
+/* 
+// ================= //
+//       ABOUT       //
+// ================= //
+*/
+
+.about-text-container h1 {
+  transform: translateY(64px);
+
+  padding-left: 12px;
+  /* margin-bottom: 20px; */
+
+  font-size: 45px;
+  line-height: 1em;
+}
+
+.inner-about-text-container {
+  border: 1px solid var(--primaryColorDark);
+  border-radius: 10px;
+
+  min-width: 275px;
+
+  padding: 65px 50px 30px 50px;
+}
+
+.about-main-text {
+  font-weight: 500;
+}
+
+.about-sub-text {
+  font-weight: 300;
 }
 
 /* // ========================================================  // */
