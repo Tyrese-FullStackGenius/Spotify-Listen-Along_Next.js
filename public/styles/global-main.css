@@ -41,6 +41,16 @@ body {
   font-weight: 100;
 }
 
+.back-to-top-arrow {
+  color: var(--primaryColorDark);
+
+  margin-left: 25px;
+}
+
+.back-to-top-arrow:hover {
+  color: var(--primaryColorDark);
+}
+
 /* 
 // ================= //
 //       MAIN       //
@@ -251,16 +261,6 @@ rest of the MVP finalized
 // ================= //
 */
 
-.btn--base {
-  background-color: transparent;
-  border: 1px solid #666666;
-  border-radius: 50px;
-  color: #666666;
-  cursor: pointer;
-  line-height: 28px;
-  padding: 0 15px;
-}
-
 .spotify-login {
   background-color: var(--SpotifyGreen);
   color: var(--primaryColorLight);
@@ -281,6 +281,15 @@ rest of the MVP finalized
   background-color: var(--primaryColorDark);
   border: 1px solid var(--primaryColorDark);
   color: var(--primaryColorLight);
+  border-radius: 8px;
+
+  transition: ease-in 150ms;
+}
+
+.btn.dark:hover {
+  background-color: var(--primaryColorLight);
+  border: 1px solid var(--primaryColorDark);
+  color: var(--primaryColorDark);
 }
 
 /* 

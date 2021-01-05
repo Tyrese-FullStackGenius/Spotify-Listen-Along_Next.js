@@ -5,17 +5,24 @@ import Header from "./Header.js";
 // ================= //
 
 const Layout = (props) => (
-  <div className="container layout-base" id="tippity-top">
+  <>
+    <div id="tippity-top"></div>
+
     <Header />
-    <div>{props.children}</div>
-    <div className="row justify-content-center p-1">
-      <div className="container mt-5 pt-5 col-12" id="footer-container">
-        <p className="made-with-love">
-          made with <i className="fas fa-heart"></i> by tyler samuelson
-        </p>
+    <div className="container layout-base">
+      <div>{props.children}</div>
+      <div className="row justify-content-center p-1">
+        <div className="container mt-5 pt-5 col-12" id="footer-container">
+          <p className="made-with-love">
+            made with <i className="fas fa-heart"></i> by tyler samuelson{" "}
+            <a className="back-to-top-arrow" href="#tippity-top">
+              <i className="fas fa-arrow-up fa-sm"></i>
+            </a>
+          </p>
+        </div>
       </div>
     </div>
-  </div>
+  </>
 );
 
 export default Layout;

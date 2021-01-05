@@ -3,10 +3,10 @@
   "login": "Log in with Spotify",
   "online": "Online Users",
   "queue.title": "Queue",
-  "queue.empty": "The queue is empty, add a song.",
-  "queue.add": "Add a song",
+  "queue.empty": "The queue is empty, try adding a song.",
+  "queue.add": "Search for a song",
   "devices.title": "Devices",
   "devices.fetch": "Fetch devices",
   "devices.transfer": "Transfer",
-  "devices.empty": "The list of devices is empty."
+  "devices.empty": "The list of devices is currently empty."
 }
