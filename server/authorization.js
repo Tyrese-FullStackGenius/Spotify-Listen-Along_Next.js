@@ -89,7 +89,7 @@ auth.get("/callback", function (req, res) {
       form: {
         code: code,
         redirect_uri: redirect_uri,
-        grant_type: "authorization code",
+        grant_type: "authorization_code",
       },
       headers: {
         Authorization:

@@ -34,7 +34,7 @@ const getCurrentUser = () => (dispatch, getState) =>
     });
 
 const updateToken = () => (dispatch, getState) => {
-  return fetch(`${Config.HOST}/auth/token`, {
+  return fetch(`http://localhost:3000/auth/token`, {
     method: "POST",
     body: JSON.stringify({
       refresh_token: getState().session.refresh_token,
@@ -87,7 +87,7 @@ export default (store) => (next) => (action) => {
     // Login user...
     case LOGIN: {
       const getLoginURL = (scopes) => {
-        return `${Config.HOST}/auth/login?scope=${encodeURIComponent(
+        return `http://localhost:3000/auth/login?scope=${encodeURIComponent(
           scopes.join(" ")
         )}`;
       };
