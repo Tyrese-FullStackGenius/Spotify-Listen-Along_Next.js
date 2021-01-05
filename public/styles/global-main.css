@@ -4,6 +4,10 @@
 // ============================ //
 */
 
+* {
+  /* padding: 5px; */
+}
+
 :root {
   --primaryColorLight: #fdfbf5;
   --primaryColorDark: #202020;
@@ -54,13 +58,13 @@ rest of the MVP finalized
 // ================= //
 */
 
-.app {
-  margin: 20px;
-  padding: 20px;
+.core-app-container {
 }
 
 .queue-container {
-  width: 400px;
+  margin-top: 75px;
+
+  min-width: 500px;
 }
 
 .users-container {
@@ -72,6 +76,11 @@ rest of the MVP finalized
 //      HEADER       //
 // ================= //
 */
+
+.navbar {
+  background-color: var(--primaryColorLight);
+  box-shadow: 0px 3px 15px rgba(32, 32, 32, 0.2);
+}
 
 .wordmark-container {
   display: flex;
@@ -97,13 +106,6 @@ rest of the MVP finalized
   align-items: center;
 }
 
-.link-base {
-  line-height: 30px;
-}
-
-.main-link {
-}
-
 .header {
   padding: 20px 5px;
 }
@@ -120,38 +122,51 @@ rest of the MVP finalized
 // ================= //
 */
 
-.add-to-queue__search-results {
-  border: 1px solid #999999;
+.search-results-container {
+  border: 1px solid var(--primaryColorDark);
+  border-radius: 0px 0px 10px 10px;
   list-style: none;
-  margin: 0;
-  padding: 0;
+  min-width: 500px;
+
+  padding-bottom: 10px;
 }
 
-.add-to-queue__search-results-item {
-  padding: 5px 0 5px 5px;
+.search-results-item {
+  padding: 5px 0px 10px 0px;
+  margin-top: 5px;
 }
 
-.add-to-queue__search-results-item--focused {
-  background-color: #eeeeee;
+.search-results-item--focused {
+  background-color: maroon;
 }
 
 .album-img {
+  float: left;
   width: 64;
-  padding-right: 1em;
+  padding-right: 1.3em;
 }
 
 .flex-item {
   flex-grow: 1;
 }
 
-.song-name {
-  font-size: 1.3em;
+.flex-item .song-name {
+  font-size: 1em;
   margin-bottom: 0.3em;
 }
 
-.add-to-queue__input {
-  padding: 5px;
-  width: 400px;
+.flex-item .artist-name {
+  font-size: 0.85em;
+}
+
+.add-to-queue {
+  min-width: 500px;
+}
+
+.search-input {
+  margin-top: 15px;
+  padding: 8px;
+  min-width: 500px;
 }
 
 /* 
@@ -198,21 +213,61 @@ rest of the MVP finalized
 // ================= //
 */
 
+table {
+  min-width: 500px;
+}
+
+.devices-heading {
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.fetch-devices-btn {
+  padding: 1px 10px;
+  margin-bottom: 25px;
+
+  max-width: 150px;
+
+  font-weight: 300;
+}
+
+.transfer-devices-btn {
+  padding: 1px 10px;
+  margin-bottom: 25px;
+
+  max-width: 150px;
+
+  font-weight: 300;
+}
+
 /* 
 // ================= //
 //    NOW PLAYING    //
 // ================= //
 */
 
-.now-playing {
-  background-color: #424d58;
-  color: #ffffff;
-  height: 250px;
+.now-playing-container {
+  border: 1px solid var(--primaryColorDark);
+  border-radius: 10px;
+  color: var(--primaryColorDark);
+  min-height: 350px;
+
+  width: 800px;
   position: relative;
-  width: 100%;
+  width: 90%;
+
+  margin: 10px auto;
 }
 
-.now-playing__text {
+.now-playing__img img {
+  width: auto;
+
+  max-height: 275px;
+}
+
+.now-playing__details {
+  width: 60%;
+  margin-left: 25px;
   padding: 40px;
 }
 
@@ -222,17 +277,16 @@ rest of the MVP finalized
 
 .now-playing__track-name {
   font-size: 2em;
-  padding-top: 1.2em;
+  padding-top: 1em;
 }
 
 .now-playing__artist-name {
-  font-size: 1.2em;
-  padding-bottom: 2em;
+  font-size: 1.5em;
   padding-top: 0.5em;
 }
 
 .now-playing__user {
-  padding-top: 0.5em;
+  padding-top: 1.5em;
 }
 
 .now-playing__progress-bar {
@@ -250,10 +304,21 @@ rest of the MVP finalized
 */
 
 .queue {
-  max-width: 550px;
 }
 
-tr .queue-item-table-data {
+.queue-table {
+  margin-top: 15px;
+  width: 90%;
+}
+
+.queue-entry {
+}
+
+.queue-item-table-img {
+  padding-right: 15px;
+}
+
+.queue-item-table-data {
   padding-right: 10px;
 }
 
@@ -296,13 +361,12 @@ tr .queue-item-table-data {
   line-height: 30px;
 }
 
-.media,
-.media__bd {
+.media {
   overflow: hidden;
   _overflow: visible;
   zoom: 1;
 }
 
-.media .media__img {
+.media__img {
   margin-right: 10px;
 }

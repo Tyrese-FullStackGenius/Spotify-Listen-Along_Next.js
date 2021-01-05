@@ -21,25 +21,25 @@ class SearchResultsList extends React.Component {
   render() {
     const { results, focus } = this.props;
     return (
-      <ul className="add-to-queue__search-results">
+      <ul className="search-results-container">
         {results.map((result, index) => {
           const isFocused = focus === index;
           const className =
-            "add-to-queue__search-results-item" +
-            (isFocused ? " add-to-queue__search-results-item--focused" : "");
+            "search-results-item" +
+            (isFocused ? " search-results-item--focused" : "");
           return (
             <li
               key={result.id}
               className={className}
               onClick={() => this.props.onSelect(result.id)}
             >
-              <div className="container">
+              <div className="search-results-item-container">
                 <div className="album-img">
                   <img src={result.album.images[2].url} />
                 </div>
                 <div className="flex-item">
                   <div className="song-name">{result.name}</div>
-                  <div>{result.artists[0].name}</div>
+                  <div className="artist-name">{result.artists[0].name}</div>
                 </div>
               </div>
             </li>
@@ -119,9 +119,9 @@ class AddToQueue extends React.Component {
     const placeholder = this.props.intl.formatMessage({ id: "queue.add" });
     const results = this.props.search.results;
     return (
-      <div className="add-to-queue">
+      <div className="add-to-queue col-12">
         <input
-          className="add-to-queue__input"
+          className="search-input"
           placeholder={placeholder}
           value={this.state.text}
           onChange={this.handleChange}

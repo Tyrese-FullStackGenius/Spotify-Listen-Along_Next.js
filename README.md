@@ -37,6 +37,7 @@ Listen Along is bringing back listening rooms. Intimate opportunities to share a
 - Get our Recommender-Robot functioning
 - Light/Dark modes! Add a switch to toggle modes.
 - Get progress bar working...
+- Add a way to favorite a song / an add-to-playlist button/dropdown
 
 ## Install:
 

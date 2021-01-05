@@ -20,7 +20,7 @@ class Queue extends React.PureComponent {
   render() {
     const { items, session } = this.props;
     return (
-      <div className="row justify-content-center">
+      <div className="queue row justify-content-center p-2">
         <h2>
           <FormattedMessage id="queue.title" />
         </h2>
@@ -29,7 +29,7 @@ class Queue extends React.PureComponent {
             <FormattedMessage id="queue.empty" />
           </p>
         ) : (
-          <table className="queue">
+          <table className="queue-table">
             <tbody>
               {items.map((i, index) => (
                 <QueueItem

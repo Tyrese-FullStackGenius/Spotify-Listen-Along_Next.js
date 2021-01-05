@@ -9,25 +9,28 @@ export default ({ index, item, session, onRemoveItem, onVoteUp }) => {
     item.voters &&
     session.user &&
     item.voters.filter((voter) => voter.id === session.user.id).length === 0 ? (
-      <button onClick={onVoteUp}> ▲ </button>
+      <button className="btn dark" onClick={onVoteUp}>
+        {" "}
+        ▲{" "}
+      </button>
     ) : null;
   return (
-    <tr>
-      {/* *** Let's fine-tune with inline styles here... */}
-      <td className=".queue-item-table-data">
-        <img src={item.track.album.images[2].url} width="40" height="40" />
+    <tr className="queue-entry">
+      <td className="queue-item-table-img">
+        <img src={item.track.album.images[2].url} width="50" height="50" />
       </td>
-      <td className=".queue-item-table-data">{index + 1}</td>
-      <td className=".queue-item-table-data">{item.track.name}</td>
-      <td className=".queue-item-table-data">
+      <td className="queue-item-table-data">{index + 1}</td>
+      <td className="queue-item-table-data">{item.track.name}</td>
+      <td className="queue-item-table-data">
         {item.track.artists.map((a) => a.name).join(", ")}
       </td>
-      <td className=".queue-item-table-data">
+      <td className="queue-item-table-data">
         {item.user && (item.user.display_name || item.user.id)}
       </td>
       <td>
         {item.user && session.user && item.user.id === session.user.id ? (
           <button
+            className="btn dark"
             onClick={() => {
               onRemoveItem(item.id);
             }}

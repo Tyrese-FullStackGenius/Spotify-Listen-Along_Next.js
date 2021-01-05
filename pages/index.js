@@ -38,15 +38,15 @@ class Main extends React.Component {
             position={this.props.playing.position}
           />
         ) : null}
-        <div className="app">
-          <div className="row justify-content-center p-2 queue-container">
+        <div className="core-app-container">
+          <div className="queue-container">
             <Queue items={this.props.queue} session={this.props.session} />
 
             {/* If user is logged-in, then show Queue and Devices */}
             {this.props.session.user !== null ? <AddToQueue /> : null}
             {this.props.session.user !== null ? <Devices /> : null}
           </div>
-          <div className="row justify-content-center p-2 users-container">
+          <div className="users-container">
             <Users items={this.props.users} />
           </div>
         </div>
