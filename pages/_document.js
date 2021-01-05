@@ -15,12 +15,21 @@ export default class IntlDocument extends Document {
 
   render() {
     return (
-      <html>
+      <html lang="en">
         <Head>
+          <meta charset="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta
             name="description"
             content="Listen Along is bringing back collaborative listening rooms. Intimate opportunities to share and experience music with your friends. A shared queue can be added to and edited by anyone present in the listening room. Vote songs up the queue and jam synchronously together via Spotify—-even when you can't be together."
           />
+          <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+            crossorigin="anonymous"
+          />
+
           <link
             rel="shortcut icon"
             href="/images/listen-along-wordmark-dark.svg"
@@ -39,6 +48,11 @@ export default class IntlDocument extends Document {
             }}
           />
           <NextScript />
+          <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+            crossorigin="anonymous"
+          ></script>
         </body>
       </html>
     );
