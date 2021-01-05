@@ -20,7 +20,7 @@ class Queue extends React.PureComponent {
   render() {
     const { items, session } = this.props;
     return (
-      <div style={{ paddingBottom: "10px" }}>
+      <div className="row justify-content-center">
         <h2>
           <FormattedMessage id="queue.title" />
         </h2>
