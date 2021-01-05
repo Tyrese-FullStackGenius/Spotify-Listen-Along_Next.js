@@ -20,9 +20,9 @@ let auth = Router();
 // Generates a random string containing numbers and letters
 // ==> length = The length of the string
 // ==> text = The generated string
-var generateRandomString = (length) => {
-  var text = "";
-  var possibleText =
+const generateRandomString = (length) => {
+  let text = "";
+  let possibleText =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
   for (var i = 0; i < length; i++) {
@@ -33,19 +33,19 @@ var generateRandomString = (length) => {
   return text;
 };
 
-var stateKey = "spotify_auth_state";
+const stateKey = "spotify_auth_state";
 
 // ========================= //
 //   AUTHORIZATION REQUEST   //
 // ========================= //
 auth.get("/login", function (req, res) {
-  var state = generateRandomString(16);
+  let state = generateRandomString(16);
   res.cookie(stateKey, state);
 
   // SCOPES:
   // ==> • user-read-playback-state | Read access to a user's player state
   // ==> • user-modify-playback-state | Write access to a user's playback state
-  var scope = "user-read-playback-state user-modify-playback-state";
+  const scope = "user-read-playback-state user-modify-playback-state";
   res.redirect(
     "https://accounts.spotify.com/authorize?" +
       querystring.stringify({
@@ -67,9 +67,9 @@ auth.get("/callback", function (req, res) {
   // REF: https://stackoverflow.com/questions/45580904/implement-log-in-with-spotify-popup
 
   // var was used in ref, but we can use let... right?
-  var code = req.query.code || null;
-  var state = req.query.state || null;
-  var storedState = req.cookies ? req.cookies[stateKey] : null;
+  let code = req.query.code || null;
+  let state = req.query.state || null;
+  let storedState = req.cookies ? req.cookies[stateKey] : null;
 
   if (state === null || state !== storedState) {
     console.log(
@@ -84,7 +84,7 @@ auth.get("/callback", function (req, res) {
     });
   } else {
     res.clearCookie(stateKey);
-    var authOptions = {
+    const authOptions = {
       url: "https://accounts.spotify.com/api/token",
       form: {
         code: code,
@@ -101,7 +101,7 @@ auth.get("/callback", function (req, res) {
 
     request.post(authOptions, function (error, response, body) {
       if (!error && response.statusCode === 200) {
-        var access_token = body.access_token,
+        let access_token = body.access_token,
           refresh_token = body.refresh_token,
           expires_in = body.expires_in;
 
@@ -130,9 +130,9 @@ auth.get("/callback", function (req, res) {
 // ================= //
 auth.post("/token", function (req, res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
-  var refreshToken = req.body ? req.body.refresh_token : null;
+  let refreshToken = req.body ? req.body.refresh_token : null;
   if (refreshToken) {
-    var authOptions = {
+    let authOptions = {
       url: "https://accounts.spotify.com/api/token",
       form: {
         refresh_token: refreshToken,
@@ -147,7 +147,7 @@ auth.post("/token", function (req, res) {
     };
     request.post(authOptions, function (error, response, body) {
       if (!error && response.statusCode === 200) {
-        var access_token = body.access_token,
+        let access_token = body.access_token,
           expires_in = body.expires_in;
 
         res.setHeader("Content-Type", "application/json");
