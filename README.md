@@ -1,6 +1,6 @@
 # LSTN ALNG - Music should be shared.
 
-Listen Along is bringing back listening rooms. Intimate opportunities to share and experience music with your friends. A shared queue can be added to and edited by anyone present in the listening room. Vote songs up the queue and jam synchronously together via Spotify—-even when you can't be together.
+Listen Along is bringing back listening rooms. Intimate opportunities to share and experience music with your friends. A shared queue can be added to and edited by anyone present in the room. Global pandemics make the collective experience of a concert near impossible. That shouldn't stop us from connecting over music. Listen along, together.
 
 <!-- **Link to site:** https://tytysam.github.io/TheBoys_Supe-r_Destruction/ -->
 
@@ -28,15 +28,14 @@ Listen Along is bringing back listening rooms. Intimate opportunities to share a
 
 - Current Bugs: none reported...
 - Current Issues:
-  - Manage end-queue( )...
 
 ### What's Next...
 
 - Multiple rooms
 - Build-out chatbox functionality for each room
-- Get our Recommender-Robot functioning
+- Get Recommender-Robot functioning
 - Light/Dark modes! Add a switch to toggle modes.
-- Get progress bar working...
+- Get progress bar consistently cooperating...
 - Add a way to favorite a song / an add-to-playlist button/dropdown
 
 ## Install:
