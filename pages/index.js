@@ -46,7 +46,7 @@ class Main extends React.Component {
             {/* If user is logged-in, then show Queue */}
             {this.props.session.user !== null ? <AddToQueue /> : null}
           </div>
-          <div className="users-container container">
+          <div className="users-container ">
             <Users items={this.props.users} />
 
             {/* If user is logged-in, then show Devices */}

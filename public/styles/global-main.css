@@ -12,6 +12,8 @@
   --primaryColorLight: #fdfbf5;
   --primaryColorDark: #202020;
 
+  --headerFont: "Recoleta", sans serif;
+
   --SpotifyGreen: #1ed760;
 
   --boxShadowColor: rgba(32, 32, 32, 0.3);
@@ -39,6 +41,20 @@ body {
   text-align: center;
   margin: 0;
   font-weight: 100;
+}
+
+.portfolio-link {
+  color: var(--primaryColorDark);
+  text-decoration: none;
+
+  transition: ease-in 150ms;
+}
+
+.portfolio-link:hover {
+  color: var(--primaryColorDark);
+
+  font-weight: 300;
+  transition: ease-in 150ms;
 }
 
 .back-to-top-arrow {
@@ -210,6 +226,37 @@ rest of the MVP finalized
 
 /* 
 // ================= //
+//       QUEUE       //
+// ================= //
+*/
+
+.queue {
+}
+
+.queue-header {
+  font-family: var(--headerFont);
+  font-size: 45px;
+  font-weight: 200px;
+}
+
+.queue-table {
+  margin-top: 15px;
+  width: 90%;
+}
+
+.queue-entry {
+}
+
+.queue-item-table-img {
+  padding-right: 15px;
+}
+
+.queue-item-table-data {
+  padding-right: 10px;
+}
+
+/* 
+// ================= //
 //   ADD TO QUEUE    //
 // ================= //
 */
@@ -229,7 +276,7 @@ rest of the MVP finalized
 }
 
 .search-results-item--focused {
-  background-color: maroon;
+  background-color: rgba(32, 32, 32, 0.4);
 }
 
 .album-img {
@@ -260,6 +307,129 @@ rest of the MVP finalized
   padding: 8px;
   min-width: 500px;
 }
+
+/* 
+// ================= //
+//      DEVICES      //
+// ================= //
+*/
+
+.devices-table {
+  max-width: 80%;
+  min-width: 400px;
+}
+
+.devices-heading {
+  margin-top: 25px;
+  margin-bottom: 10px;
+
+  font-family: var(--headerFont);
+  font-size: 45px;
+  font-weight: 200px;
+}
+
+.fetch-devices-btn {
+  padding: 1px 10px;
+  margin-bottom: 25px;
+
+  max-width: 150px;
+
+  font-weight: 300;
+}
+
+.transfer-devices-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 20px;
+}
+
+.transfer-devices-btn {
+  padding: 1px 10px;
+  /* margin-top: 25px; */
+
+  max-width: 150px;
+
+  font-weight: 300;
+}
+
+.fa-icon {
+  padding-left: 5px;
+}
+
+/* 
+// ================= //
+//       USERS       //
+// ================= //
+*/
+
+.users-container {
+}
+
+.user-list-header {
+  font-family: var(--headerFont);
+  font-size: 45px;
+  font-weight: 200px;
+}
+
+.user-list {
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+}
+
+.user-list-item {
+  padding-right: 25px;
+  margin-left: 25px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.user-image-container {
+  padding-right: 10px;
+}
+
+/* 
+// ================= //
+//       ABOUT       //
+// ================= //
+*/
+
+.about-text-container h1 {
+  transform: translateY(76px);
+
+  padding-left: 12px;
+  /* margin-bottom: 20px; */
+
+  font-family: var(--headerFont);
+  font-size: 55px;
+  font-weight: 900;
+  line-height: 1em;
+}
+
+.inner-about-text-container {
+  border: 1px solid var(--primaryColorDark);
+  border-radius: 10px;
+
+  min-width: 275px;
+
+  padding: 75px 50px 30px 50px;
+}
+
+.about-main-text {
+  font-weight: 500;
+}
+
+.about-sub-text {
+  font-weight: 300;
+}
+
+/* // ========================================================  // */
 
 /* 
 // ================= //
@@ -297,136 +467,6 @@ rest of the MVP finalized
   border: 1px solid var(--primaryColorDark);
   color: var(--primaryColorDark);
 }
-
-/* 
-// ================= //
-//      DEVICES      //
-// ================= //
-*/
-
-table {
-  min-width: 500px;
-}
-
-.devices-heading {
-  margin-top: 25px;
-  margin-bottom: 10px;
-}
-
-.fetch-devices-btn {
-  padding: 1px 10px;
-  margin-bottom: 25px;
-
-  max-width: 150px;
-
-  font-weight: 300;
-}
-
-.transfer-devices-btn {
-  padding: 1px 10px;
-  margin-bottom: 25px;
-
-  max-width: 150px;
-
-  font-weight: 300;
-}
-
-.fa-icon {
-  padding-left: 5px;
-}
-
-/* 
-// ================= //
-//       QUEUE       //
-// ================= //
-*/
-
-.queue {
-}
-
-.queue-table {
-  margin-top: 15px;
-  width: 90%;
-}
-
-.queue-entry {
-}
-
-.queue-item-table-img {
-  padding-right: 15px;
-}
-
-.queue-item-table-data {
-  padding-right: 10px;
-}
-
-/* 
-// ================= //
-//       USERS       //
-// ================= //
-*/
-
-.users-container {
-}
-
-.user-list-header {
-}
-
-.user-list {
-  list-style: none;
-
-  margin: 0;
-  padding: 0;
-
-  display: flex;
-}
-
-.user-list-item {
-  padding-right: 25px;
-  margin-left: 25px;
-
-  display: flex;
-  justify-content: center;
-}
-
-.user-image-container {
-  padding-right: 10px;
-}
-
-/* 
-// ================= //
-//       ABOUT       //
-// ================= //
-*/
-
-.about-text-container h1 {
-  transform: translateY(64px);
-
-  padding-left: 12px;
-  /* margin-bottom: 20px; */
-
-  font-size: 45px;
-  line-height: 1em;
-}
-
-.inner-about-text-container {
-  border: 1px solid var(--primaryColorDark);
-  border-radius: 10px;
-
-  min-width: 275px;
-
-  padding: 65px 50px 30px 50px;
-}
-
-.about-main-text {
-  font-weight: 500;
-}
-
-.about-sub-text {
-  font-weight: 300;
-}
-
-/* // ========================================================  // */
 
 /* 
 // ================= //

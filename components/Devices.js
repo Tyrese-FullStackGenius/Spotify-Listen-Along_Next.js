@@ -49,10 +49,10 @@ class Devices extends React.PureComponent {
             <FormattedMessage id="devices.empty" />
           </p>
         ) : (
-          <table>
+          <table className="devices-table">
             <tbody>
               {devices.map((device) => (
-                <tr>
+                <tr className="transfer-devices-container">
                   <td>
                     {device.is_active ? (
                       <strong>

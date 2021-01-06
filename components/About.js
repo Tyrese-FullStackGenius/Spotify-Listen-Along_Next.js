@@ -2,7 +2,7 @@ const About = () => (
   <>
     <div className="row justify-content-center p-1">
       <div className="col-md-12 about-text-container">
-        <h1>
+        <h1 className="about-header">
           Music Should
           <br />
           Be Shared.

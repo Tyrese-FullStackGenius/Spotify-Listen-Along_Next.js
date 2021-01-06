@@ -21,7 +21,7 @@ class Queue extends React.PureComponent {
     const { items, session } = this.props;
     return (
       <div className="queue row justify-content-center p-2">
-        <h2>
+        <h2 className="queue-header">
           <FormattedMessage id="queue.title" />
         </h2>
         {items.length === 0 ? (
