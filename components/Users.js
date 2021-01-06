@@ -7,7 +7,7 @@ import { FormattedMessage } from "react-intl";
 
 export default ({ items }) => {
   return (
-    <div className="row justify-content-center p-3">
+    <div className="row justify-content-center p-1">
       <h2 className="user-list-header">
         <FormattedMessage id="online" />
       </h2>

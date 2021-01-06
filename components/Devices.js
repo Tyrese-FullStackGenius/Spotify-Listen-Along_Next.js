@@ -29,7 +29,7 @@ class Devices extends React.PureComponent {
       transferPlaybackToDevice,
     } = this.props;
     return (
-      <div className="row justify-content-center p-2">
+      <div className="row justify-content-center p-1">
         <div className="col-12">
           <h2 className="devices-heading">
             <FormattedMessage id="devices.title" />

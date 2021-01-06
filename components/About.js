@@ -8,7 +8,7 @@ const About = () => (
           Be Shared.
         </h1>
         <div className="about-text-contents row">
-          <div className="inner-about-text-container col-lg-6">
+          <div className="inner-about-text-container col-lg-12">
             <p className="about-main-text">
               Music connects. Over time, over distance. It can transcend death
               and bring disparate peoples together. Community within music has a

@@ -96,7 +96,7 @@ class NowPlaying extends React.PureComponent {
           <div className="user-name">{userName}</div>
         </div>
 
-        <div className="now-playing-progress row justify-content-center p-3">
+        <div className="now-playing-progress justify-content-center p-1">
           <div
             className="now-playing-progress-bar"
             style={{ width: percentage }}
