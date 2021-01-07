@@ -1,6 +1,8 @@
 # LSTN ALNG - Music should be shared.
 
-Listen Along is bringing back listening rooms. Intimate opportunities to share and experience music with your friends. A shared queue can be added to and edited by anyone present in the room. Global pandemics make the collective experience of a concert near impossible. That shouldn't stop us from connecting over music. Listen along, together.
+Listen Along is bringing back listening rooms. Intimate opportunities to share and experience music with your friends. A shared queue can be added to and edited by anyone present in the room. Global pandemics make the collective experience of a concert near impossible. That shouldn't stop us from connecting over music.
+
+Listen along, together.
 
 <!-- **Link to site:** https://tytysam.github.io/TheBoys_Supe-r_Destruction/ -->
 
